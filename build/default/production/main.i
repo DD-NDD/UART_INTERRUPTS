@@ -4868,13 +4868,15 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
+
 char RESET[6] = {0xFE,0x01,0x41,0x00,0x00,0x40};
 char KEY5[7] = {0xFE,0x02,0x27,0x07,0x10,0x01,0x33};
 char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
 char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
 char* rxData;
 char Storage [64] = {0};
-char Storage2 [64] = {0};
+char Storage2 [9] = {0};
+char Num_Char[3];
 void main(void)
 {
     SYSTEM_Initialize();
@@ -4896,7 +4898,17 @@ void main(void)
             char *s;
             s = strstr(Storage,"LEVEL");
             strcpy(Storage2, s);
-            SML_SendString(Storage2,64);
+
+            Num_Char[0] = Storage2[6];
+            Num_Char[1] = Storage2[7];
+            Num_Char[2] = Storage2[8];
+            int num = 0;
+            num = atoi(Num_Char);
+            if(num == 100)
+            {
+                SML_SendString(Storage2,9);
+            }
+
             ReadyReceiveBuffer();
         }
     }

@@ -1,4 +1,4 @@
-# 1 "uart.c"
+# 1 "mcc_generated_files/pin_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,132 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "uart.c" 2
-# 1 "./uart.h" 1
-# 14 "./uart.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 14 "./uart.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 140 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ptrdiff_t;
-# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stddef.h" 2 3
-# 15 "./uart.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 16 "./uart.h" 2
-
-# 1 "./mcc_generated_files/eusart.h" 1
-# 54 "./mcc_generated_files/eusart.h"
+# 1 "mcc_generated_files/pin_manager.c" 2
+# 49 "mcc_generated_files/pin_manager.c"
+# 1 "mcc_generated_files/pin_manager.h" 1
+# 54 "mcc_generated_files/pin_manager.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -145,11 +23,29 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\features.h" 1 3
 # 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 176 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 212 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
 # 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -4706,218 +4602,61 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 54 "./mcc_generated_files/eusart.h" 2
-# 75 "./mcc_generated_files/eusart.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart_status_t;
-
-
-
-
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-
-
-
-extern void (*EUSART_TxDefaultInterruptHandler)(void);
-extern void (*EUSART_RxDefaultInterruptHandler)(void);
-# 117 "./mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 165 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 213 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 260 "./mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 308 "./mcc_generated_files/eusart.h"
-eusart_status_t EUSART_get_last_status(void);
-# 328 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 348 "./mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 369 "./mcc_generated_files/eusart.h"
-void EUSART_Transmit_ISR(void);
-# 390 "./mcc_generated_files/eusart.h"
-void EUSART_Receive_ISR(void);
-# 411 "./mcc_generated_files/eusart.h"
-void EUSART_RxDataHandler(void);
-# 429 "./mcc_generated_files/eusart.h"
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 447 "./mcc_generated_files/eusart.h"
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 465 "./mcc_generated_files/eusart.h"
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 485 "./mcc_generated_files/eusart.h"
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 505 "./mcc_generated_files/eusart.h"
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 17 "./uart.h" 2
-
-
-
-
-
-
-uint8_t ResponseIndex = 0;
-
-
-typedef enum {
-    SML
-} uart_configurations_t;
-
-typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); _Bool (*TransmitReady)(void); _Bool (*DataReady)(void); void (*SetTxISR)(void (* interruptHandler)(void)); void (*RxDefaultISR)(void); void (*SetRxISR)(void (* interruptHandler)(void)); _Bool (*TransmitDone)(void); void (*TxDefaultISR)(void); void (*Initialize)(void); } uart_functions_t;
-
-extern const uart_functions_t uart[];
-
-char ResponseBuffer [64] = {0};
-char ReadStorage [64] = {0};
-void blockingWait(uint16_t);
-void ReadyReceiveBuffer(void);
-char* GetResponse(void);
-void SendString(const char*);
-void SML_SendString(const char*,int len);
-void INIT_SMART_LIGHT (void);
-void ReceivedMessage(void);
-# 1 "uart.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 419 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 2 "uart.c" 2
-
-# 1 "./mcc_generated_files/mcc.h" 1
-# 50 "./mcc_generated_files/mcc.h"
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 102 "./mcc_generated_files/pin_manager.h"
+# 54 "mcc_generated_files/pin_manager.h" 2
+# 102 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 114 "./mcc_generated_files/pin_manager.h"
+# 114 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 49 "mcc_generated_files/pin_manager.c" 2
 
 
 
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 54 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 3 "uart.c" 2
 
-const uart_functions_t uart[] = {
-    {EUSART_Read, EUSART_Write, EUSART_is_tx_ready, EUSART_is_rx_ready, EUSART_SetTxInterruptHandler, EUSART_Receive_ISR, EUSART_SetRxInterruptHandler, EUSART_is_tx_done, EUSART_Transmit_ISR, EUSART_Initialize }
-};
-void SendString(const char* command)
+
+
+void PIN_MANAGER_Initialize(void)
 {
-    while (ResponseIndex-- != 0)
-        uart[SML].Write(*command++);
+
+
+
+    LATA = 0x00;
+    LATB = 0x00;
+    LATC = 0x00;
+
+
+
+
+    TRISA = 0x3F;
+    TRISB = 0x70;
+    TRISC = 0xFF;
+
+
+
+
+    ANSELC = 0xFF;
+    ANSELB = 0x50;
+    ANSELA = 0x37;
+
+
+
+
+    WPUB = 0x00;
+    WPUA = 0x00;
+    OPTION_REGbits.nWPUEN = 1;
+
+
+
+
+
+    APFCON = 0x00;
+
+
+
+
 
 
 }
-void SML_SendString(const char* command,int len)
-{
-    while (len-- !=0)
-        uart[SML].Write(*command++);
-}
 
-
-
-void INIT_SMART_LIGHT (void)
+void PIN_MANAGER_IOC(void)
 {
-    uart[SML].SetRxISR(ReceivedMessage);
-    SendString("SYS FACTORY RESET");
-    SendString("SMART LIGHT INIT");
-}
-void ReceivedMessage(void)
-{
-    uart[SML].RxDefaultISR();
-    while (!uart[SML].DataReady()) {
-        __nop();
-    }
-    uint8_t readByte = uart[SML].Read();
-    if ((ResponseIndex < 64) )
-        ResponseBuffer[ResponseIndex++] = readByte;
-}
-
-
-
-void ReadyReceiveBuffer (void)
-{
-    ResponseIndex = 0;
-    for (uint8_t position = 0; position < 64; position++)
-        ResponseBuffer[position] = 0;
-}
-char* GetResponse(void)
-{
-    return ResponseBuffer;
-}
-void blockingWait (uint16_t limit)
-{
-    for (uint16_t counter = 0; counter < limit; counter++)
-  _delay((unsigned long)((10)*(32000000/4000.0)));
 }

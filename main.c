@@ -1,6 +1,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "uart.h"
 #include "string.h"
+#include "stdlib.h"
 // reset hardware FE 01 41 00 00 40    
 // reset software FE 01 41 00 00 40                                      
 // key 5 = true FE 02 27 07 10 01 33
@@ -13,7 +14,8 @@ char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
 char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
 char* rxData;
 char Storage [responseBufferSize] = {0};
-char Storage2 [responseBufferSize] = {0};
+char Storage2 [9] = {0};
+char Num_Char[3];
 void main(void)
 {
     SYSTEM_Initialize();
@@ -35,7 +37,17 @@ void main(void)
             char *s;
             s = strstr(Storage,"LEVEL");
             strcpy(Storage2, s);
-            SML_SendString(Storage2,64);
+            //SML_SendString(Storage2,9);
+            Num_Char[0] = Storage2[6];
+            Num_Char[1] = Storage2[7];
+            Num_Char[2] = Storage2[8];
+            int num = 0;
+            num = atoi(Num_Char);
+            if(num == 100)
+            {
+                SML_SendString(Storage2,9);
+            }
+            
             ReadyReceiveBuffer(); 
         }
     }

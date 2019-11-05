@@ -36,6 +36,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 51: char *strstr (const char *, const char *);
 [v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"23 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 23: int atoi (const char *);
+[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
 "40 ./uart.h
 [; ;./uart.h: 40: void SML_SendString(const char*,int len);
 [v _SML_SendString `(v ~T0 @X0 0 ef2`*Cuc`i ]
@@ -628,8 +631,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"10 main.c
-[; ;main.c: 10: char RESET[6] = {0xFE,0x01,0x41,0x00,0x00,0x40};
+"11 main.c
+[; ;main.c: 11: char RESET[6] = {0xFE,0x01,0x41,0x00,0x00,0x40};
 [v _RESET `uc ~T0 @X0 -> 6 `i e ]
 [i _RESET
 :U ..
@@ -641,8 +644,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 64 `i `uc
 ..
 ]
-"11
-[; ;main.c: 11: char KEY5[7] = {0xFE,0x02,0x27,0x07,0x10,0x01,0x33};
+"12
+[; ;main.c: 12: char KEY5[7] = {0xFE,0x02,0x27,0x07,0x10,0x01,0x33};
 [v _KEY5 `uc ~T0 @X0 -> 7 `i e ]
 [i _KEY5
 :U ..
@@ -655,8 +658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 51 `i `uc
 ..
 ]
-"12
-[; ;main.c: 12: char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
+"13
+[; ;main.c: 13: char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
 [v _KEY3 `uc ~T0 @X0 -> 7 `i e ]
 [i _KEY3
 :U ..
@@ -669,8 +672,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 39 `i `uc
 ..
 ]
-"13
-[; ;main.c: 13: char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
+"14
+[; ;main.c: 14: char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
 [v _LVL `uc ~T0 @X0 -> 5 `i e ]
 [i _LVL
 :U ..
@@ -681,101 +684,130 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 76 `i `uc
 ..
 ]
-"14
-[; ;main.c: 14: char* rxData;
-[v _rxData `*uc ~T0 @X0 1 e ]
 "15
-[; ;main.c: 15: char Storage [64] = {0};
+[; ;main.c: 15: char* rxData;
+[v _rxData `*uc ~T0 @X0 1 e ]
+"16
+[; ;main.c: 16: char Storage [64] = {0};
 [v _Storage `uc ~T0 @X0 -> 64 `i e ]
 [i _Storage
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"16
-[; ;main.c: 16: char Storage2 [64] = {0};
-[v _Storage2 `uc ~T0 @X0 -> 64 `i e ]
+"17
+[; ;main.c: 17: char Storage2 [9] = {0};
+[v _Storage2 `uc ~T0 @X0 -> 9 `i e ]
 [i _Storage2
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"17
-[; ;main.c: 17: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
 "18
-[; ;main.c: 18: {
+[; ;main.c: 18: char Num_Char[3];
+[v _Num_Char `uc ~T0 @X0 -> 3 `i e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"19
+[; ;main.c: 19: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"20
+[; ;main.c: 20: {
 {
 [e :U _main ]
 [f ]
-"19
-[; ;main.c: 19:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"20
-[; ;main.c: 20:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "21
-[; ;main.c: 21:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 21:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "22
-[; ;main.c: 22:     INIT_SMART_LIGHT ();
-[e ( _INIT_SMART_LIGHT ..  ]
+[; ;main.c: 22:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "23
-[; ;main.c: 23:     ReadyReceiveBuffer();
-[e ( _ReadyReceiveBuffer ..  ]
+[; ;main.c: 23:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "24
-[; ;main.c: 24:     int test = 0;
+[; ;main.c: 24:     INIT_SMART_LIGHT ();
+[e ( _INIT_SMART_LIGHT ..  ]
+"25
+[; ;main.c: 25:     ReadyReceiveBuffer();
+[e ( _ReadyReceiveBuffer ..  ]
+"26
+[; ;main.c: 26:     int test = 0;
 [v _test `i ~T0 @X0 1 a ]
 [e = _test -> 0 `i ]
-"25
-[; ;main.c: 25:     while (1)
-[e :U 460 ]
-"26
-[; ;main.c: 26:     {
-{
 "27
-[; ;main.c: 27:         if(ResponseIndex != 0)
-[e $ ! != -> _ResponseIndex `i -> 0 `i 462  ]
+[; ;main.c: 27:     while (1)
+[e :U 460 ]
 "28
-[; ;main.c: 28:         {
+[; ;main.c: 28:     {
 {
 "29
-[; ;main.c: 29:             blockingWait(2);
-[e ( _blockingWait (1 -> -> 2 `i `us ]
+[; ;main.c: 29:         if(ResponseIndex != 0)
+[e $ ! != -> _ResponseIndex `i -> 0 `i 462  ]
 "30
-[; ;main.c: 30:             rxData = GetResponse();
+[; ;main.c: 30:         {
+{
+"31
+[; ;main.c: 31:             blockingWait(2);
+[e ( _blockingWait (1 -> -> 2 `i `us ]
+"32
+[; ;main.c: 32:             rxData = GetResponse();
 [e = _rxData ( _GetResponse ..  ]
-"33
-[; ;main.c: 33:             strcpy(Storage, rxData);
-[e ( _strcpy (2 , &U _Storage -> _rxData `*Cuc ]
 "35
-[; ;main.c: 35:             char *s;
-[v _s `*uc ~T0 @X0 1 a ]
-"36
-[; ;main.c: 36:             s = strstr(Storage,"LEVEL");
-[e = _s ( _strstr (2 , -> &U _Storage `*Cuc :s 1C ]
+[; ;main.c: 35:             strcpy(Storage, rxData);
+[e ( _strcpy (2 , &U _Storage -> _rxData `*Cuc ]
 "37
-[; ;main.c: 37:             strcpy(Storage2, s);
-[e ( _strcpy (2 , &U _Storage2 -> _s `*Cuc ]
+[; ;main.c: 37:             char *s;
+[v _s `*uc ~T0 @X0 1 a ]
 "38
-[; ;main.c: 38:             SML_SendString(Storage2,64);
-[e ( _SML_SendString (2 , -> &U _Storage2 `*Cuc -> 64 `i ]
+[; ;main.c: 38:             s = strstr(Storage,"LEVEL");
+[e = _s ( _strstr (2 , -> &U _Storage `*Cuc :s 1C ]
 "39
-[; ;main.c: 39:             ReadyReceiveBuffer();
+[; ;main.c: 39:             strcpy(Storage2, s);
+[e ( _strcpy (2 , &U _Storage2 -> _s `*Cuc ]
+"41
+[; ;main.c: 41:             Num_Char[0] = Storage2[6];
+[e = *U + &U _Num_Char * -> -> -> 0 `i `ui `ux -> -> # *U &U _Num_Char `ui `ux *U + &U _Storage2 * -> -> -> 6 `i `ui `ux -> -> # *U &U _Storage2 `ui `ux ]
+"42
+[; ;main.c: 42:             Num_Char[1] = Storage2[7];
+[e = *U + &U _Num_Char * -> -> -> 1 `i `ui `ux -> -> # *U &U _Num_Char `ui `ux *U + &U _Storage2 * -> -> -> 7 `i `ui `ux -> -> # *U &U _Storage2 `ui `ux ]
+"43
+[; ;main.c: 43:             Num_Char[2] = Storage2[8];
+[e = *U + &U _Num_Char * -> -> -> 2 `i `ui `ux -> -> # *U &U _Num_Char `ui `ux *U + &U _Storage2 * -> -> -> 8 `i `ui `ux -> -> # *U &U _Storage2 `ui `ux ]
+"44
+[; ;main.c: 44:             int num = 0;
+[v _num `i ~T0 @X0 1 a ]
+[e = _num -> 0 `i ]
+"45
+[; ;main.c: 45:             num = atoi(Num_Char);
+[e = _num ( _atoi (1 -> &U _Num_Char `*Cuc ]
+"46
+[; ;main.c: 46:             if(num == 100)
+[e $ ! == _num -> 100 `i 463  ]
+"47
+[; ;main.c: 47:             {
+{
+"48
+[; ;main.c: 48:                 SML_SendString(Storage2,9);
+[e ( _SML_SendString (2 , -> &U _Storage2 `*Cuc -> 9 `i ]
+"49
+[; ;main.c: 49:             }
+}
+[e :U 463 ]
+"51
+[; ;main.c: 51:             ReadyReceiveBuffer();
 [e ( _ReadyReceiveBuffer ..  ]
-"40
-[; ;main.c: 40:         }
+"52
+[; ;main.c: 52:         }
 }
 [e :U 462 ]
-"41
-[; ;main.c: 41:     }
+"53
+[; ;main.c: 53:     }
 }
 [e :U 459 ]
 [e $U 460  ]
 [e :U 461 ]
-"42
-[; ;main.c: 42: }
+"54
+[; ;main.c: 54: }
 [e :UE 458 ]
 }
 [a 1C 76 69 86 69 76 0 ]

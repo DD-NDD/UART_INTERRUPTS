@@ -1,66 +1,47 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2896 `(uc ~T0 @X0 0 tf ]
-[v F2898 `(v ~T0 @X0 0 tf1`uc ]
-[v F2901 `(a ~T0 @X0 0 tf ]
-[v F2903 `(a ~T0 @X0 0 tf ]
-[v F2906 `(v ~T0 @X0 0 tf ]
-[v F2905 `(v ~T0 @X0 0 tf1`*F2906 ]
-[v F2909 `(v ~T0 @X0 0 tf ]
-[v F2912 `(v ~T0 @X0 0 tf ]
-[v F2911 `(v ~T0 @X0 0 tf1`*F2912 ]
-[v F2915 `(a ~T0 @X0 0 tf ]
-[v F2917 `(v ~T0 @X0 0 tf ]
-[v F2919 `(v ~T0 @X0 0 tf ]
-"30 ./uart.h
-[; ;./uart.h: 30: typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); _Bool (*TransmitReady)(void); _Bool (*DataReady)(void); void (*SetTxISR)(void (* interruptHandler)(void)); void (*RxDefaultISR)(void); void (*SetRxISR)(void (* interruptHandler)(void)); _Bool (*TransmitDone)(void); void (*TxDefaultISR)(void); void (*Initialize)(void); } uart_functions_t;
-[s S456 `*F2896 1 `*F2898 1 `*F2901 1 `*F2903 1 `*F2905 1 `*F2909 1 `*F2911 1 `*F2915 1 `*F2917 1 `*F2919 1 ]
-[n S456 . Read Write TransmitReady DataReady SetTxISR RxDefaultISR SetRxISR TransmitDone TxDefaultISR Initialize ]
-"328 ./mcc_generated_files/eusart.h
-[; ;./mcc_generated_files/eusart.h: 328: uint8_t EUSART_Read(void);
-[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"348
-[; ;./mcc_generated_files/eusart.h: 348: void EUSART_Write(uint8_t txData);
-[v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
-"165
-[; ;./mcc_generated_files/eusart.h: 165: _Bool EUSART_is_tx_ready(void);
-[v _EUSART_is_tx_ready `(a ~T0 @X0 0 ef ]
-"213
-[; ;./mcc_generated_files/eusart.h: 213: _Bool EUSART_is_rx_ready(void);
-[v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
-[v F2883 `(v ~T0 @X0 0 tf ]
-"485
-[; ;./mcc_generated_files/eusart.h: 485: void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-[v _EUSART_SetTxInterruptHandler `(v ~T0 @X0 0 ef1`*F2883 ]
-"390
-[; ;./mcc_generated_files/eusart.h: 390: void EUSART_Receive_ISR(void);
-[v _EUSART_Receive_ISR `(v ~T0 @X0 0 ef ]
-[v F2887 `(v ~T0 @X0 0 tf ]
-"505
-[; ;./mcc_generated_files/eusart.h: 505: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-[v _EUSART_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F2887 ]
-"260
-[; ;./mcc_generated_files/eusart.h: 260: _Bool EUSART_is_tx_done(void);
-[v _EUSART_is_tx_done `(a ~T0 @X0 0 ef ]
-"369
-[; ;./mcc_generated_files/eusart.h: 369: void EUSART_Transmit_ISR(void);
-[v _EUSART_Transmit_ISR `(v ~T0 @X0 0 ef ]
-"117
-[; ;./mcc_generated_files/eusart.h: 117: void EUSART_Initialize(void);
-[v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
-"10 uart.c
-[; ;uart.c: 10:         uart[SML].Write(*command++);
-[c E2891 0 .. ]
-[n E2891 . SML  ]
-"42 ./uart.h
-[; ;./uart.h: 42: void ReceivedMessage(void);
-[v _ReceivedMessage `(v ~T0 @X0 0 ef ]
-"31 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-[v F2833 `(v ~T0 @X0 1 tf1`ul ]
-"92
-[v __delay `JF2833 ~T0 @X0 0 e ]
-[p i __delay ]
+[p mainexit ]
+"70 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"357 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 357:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"367
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 367:     struct {
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"356
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 356: typedef union {
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"374
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"41 ./uart.h
+[; ;./uart.h: 41: void INIT_SMART_LIGHT (void);
+[v _INIT_SMART_LIGHT `(v ~T0 @X0 0 ef ]
+"37
+[; ;./uart.h: 37: void ReadyReceiveBuffer(void);
+[v _ReadyReceiveBuffer `(v ~T0 @X0 0 ef ]
+"36
+[; ;./uart.h: 36: void blockingWait(uint16_t);
+[v _blockingWait `(v ~T0 @X0 0 ef1`us ]
+"38
+[; ;./uart.h: 38: char* GetResponse(void);
+[v _GetResponse `(*uc ~T0 @X0 0 ef ]
+"33 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 33: char *strcpy (char *restrict, const char *restrict);
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"51
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 51: char *strstr (const char *, const char *);
+[v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"23 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 23: int atoi (const char *);
+[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+"40 ./uart.h
+[; ;./uart.h: 40: void SML_SendString(const char*,int len);
+[v _SML_SendString `(v ~T0 @X0 0 ef2`*Cuc`i ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -650,224 +631,183 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"4 uart.c
-[; ;uart.c: 4: const uart_functions_t uart[] = {
-[v _uart `CS456 ~T0 @X0 -> -> 1 `i `ux e ]
-[i _uart
+"11 main.c
+[; ;main.c: 11: char RESET[6] = {0xFE,0x01,0x41,0x00,0x00,0x40};
+[v _RESET `uc ~T0 @X0 -> 6 `i e ]
+[i _RESET
 :U ..
-:U ..
-&U _EUSART_Read
-&U _EUSART_Write
-&U _EUSART_is_tx_ready
-&U _EUSART_is_rx_ready
-&U _EUSART_SetTxInterruptHandler
-&U _EUSART_Receive_ISR
-&U _EUSART_SetRxInterruptHandler
-&U _EUSART_is_tx_done
-&U _EUSART_Transmit_ISR
-&U _EUSART_Initialize
-..
+-> -> 254 `i `uc
+-> -> 1 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 64 `i `uc
 ..
 ]
-"7
-[; ;uart.c: 7: void SendString(const char* command)
-[v _SendString `(v ~T0 @X0 1 ef1`*Cuc ]
-"8
-[; ;uart.c: 8: {
-{
-[e :U _SendString ]
-"7
-[; ;uart.c: 7: void SendString(const char* command)
-[v _command `*Cuc ~T0 @X0 1 r1 ]
-"8
-[; ;uart.c: 8: {
-[f ]
-"9
-[; ;uart.c: 9:     while (ResponseIndex-- != 0)
-[e $U 459  ]
-[e :U 460 ]
-"10
-[; ;uart.c: 10:         uart[SML].Write(*command++);
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> *U ++ _command * -> -> 1 `i `x -> -> # *U _command `i `x `uc ]
-[e :U 459 ]
-"9
-[; ;uart.c: 9:     while (ResponseIndex-- != 0)
-[e $ != -> -- _ResponseIndex -> -> 1 `i `uc `i -> 0 `i 460  ]
-[e :U 461 ]
+"12
+[; ;main.c: 12: char KEY5[7] = {0xFE,0x02,0x27,0x07,0x10,0x01,0x33};
+[v _KEY5 `uc ~T0 @X0 -> 7 `i e ]
+[i _KEY5
+:U ..
+-> -> 254 `i `uc
+-> -> 2 `i `uc
+-> -> 39 `i `uc
+-> -> 7 `i `uc
+-> -> 16 `i `uc
+-> -> 1 `i `uc
+-> -> 51 `i `uc
+..
+]
 "13
-[; ;uart.c: 13: }
+[; ;main.c: 13: char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
+[v _KEY3 `uc ~T0 @X0 -> 7 `i e ]
+[i _KEY3
+:U ..
+-> -> 254 `i `uc
+-> -> 2 `i `uc
+-> -> 39 `i `uc
+-> -> 7 `i `uc
+-> -> 4 `i `uc
+-> -> 1 `i `uc
+-> -> 39 `i `uc
+..
+]
+"14
+[; ;main.c: 14: char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
+[v _LVL `uc ~T0 @X0 -> 5 `i e ]
+[i _LVL
+:U ..
+-> -> 76 `i `uc
+-> -> 69 `i `uc
+-> -> 86 `i `uc
+-> -> 69 `i `uc
+-> -> 76 `i `uc
+..
+]
+"15
+[; ;main.c: 15: char* rxData;
+[v _rxData `*uc ~T0 @X0 1 e ]
+"16
+[; ;main.c: 16: char Storage [64] = {0};
+[v _Storage `uc ~T0 @X0 -> 64 `i e ]
+[i _Storage
+:U ..
+-> -> 0 `i `uc
+..
+]
+"17
+[; ;main.c: 17: char Storage2 [9] = {0};
+[v _Storage2 `uc ~T0 @X0 -> 9 `i e ]
+[i _Storage2
+:U ..
+-> -> 0 `i `uc
+..
+]
+"18
+[; ;main.c: 18: char Num_Char[3];
+[v _Num_Char `uc ~T0 @X0 -> 3 `i e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"19
+[; ;main.c: 19: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"20
+[; ;main.c: 20: {
+{
+[e :U _main ]
+[f ]
+"21
+[; ;main.c: 21:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"22
+[; ;main.c: 22:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"23
+[; ;main.c: 23:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"24
+[; ;main.c: 24:     INIT_SMART_LIGHT ();
+[e ( _INIT_SMART_LIGHT ..  ]
+"25
+[; ;main.c: 25:     ReadyReceiveBuffer();
+[e ( _ReadyReceiveBuffer ..  ]
+"26
+[; ;main.c: 26:     int test = 0;
+[v _test `i ~T0 @X0 1 a ]
+[e = _test -> 0 `i ]
+"27
+[; ;main.c: 27:     while (1)
+[e :U 460 ]
+"28
+[; ;main.c: 28:     {
+{
+"29
+[; ;main.c: 29:         if(ResponseIndex != 0)
+[e $ ! != -> _ResponseIndex `i -> 0 `i 462  ]
+"30
+[; ;main.c: 30:         {
+{
+"31
+[; ;main.c: 31:             blockingWait(2);
+[e ( _blockingWait (1 -> -> 2 `i `us ]
+"32
+[; ;main.c: 32:             rxData = GetResponse();
+[e = _rxData ( _GetResponse ..  ]
+"35
+[; ;main.c: 35:             strcpy(Storage, rxData);
+[e ( _strcpy (2 , &U _Storage -> _rxData `*Cuc ]
+"37
+[; ;main.c: 37:             char *s;
+[v _s `*uc ~T0 @X0 1 a ]
+"38
+[; ;main.c: 38:             s = strstr(Storage,"LEVEL");
+[e = _s ( _strstr (2 , -> &U _Storage `*Cuc :s 1C ]
+"39
+[; ;main.c: 39:             strcpy(Storage2, s);
+[e ( _strcpy (2 , &U _Storage2 -> _s `*Cuc ]
+"41
+[; ;main.c: 41:             Num_Char[0] = Storage2[7];
+[e = *U + &U _Num_Char * -> -> -> 0 `i `ui `ux -> -> # *U &U _Num_Char `ui `ux *U + &U _Storage2 * -> -> -> 7 `i `ui `ux -> -> # *U &U _Storage2 `ui `ux ]
+"42
+[; ;main.c: 42:             Num_Char[1] = Storage2[8];
+[e = *U + &U _Num_Char * -> -> -> 1 `i `ui `ux -> -> # *U &U _Num_Char `ui `ux *U + &U _Storage2 * -> -> -> 8 `i `ui `ux -> -> # *U &U _Storage2 `ui `ux ]
+"43
+[; ;main.c: 43:             Num_Char[2] = Storage2[9];
+[e = *U + &U _Num_Char * -> -> -> 2 `i `ui `ux -> -> # *U &U _Num_Char `ui `ux *U + &U _Storage2 * -> -> -> 9 `i `ui `ux -> -> # *U &U _Storage2 `ui `ux ]
+"44
+[; ;main.c: 44:             int num = 0;
+[v _num `i ~T0 @X0 1 a ]
+[e = _num -> 0 `i ]
+"45
+[; ;main.c: 45:             num = atoi(Num_Char);
+[e = _num ( _atoi (1 -> &U _Num_Char `*Cuc ]
+"46
+[; ;main.c: 46:             if(num == 100)
+[e $ ! == _num -> 100 `i 463  ]
+"47
+[; ;main.c: 47:             {
+{
+"48
+[; ;main.c: 48:                 SML_SendString(Storage2,9);
+[e ( _SML_SendString (2 , -> &U _Storage2 `*Cuc -> 9 `i ]
+"49
+[; ;main.c: 49:             }
+}
+[e :U 463 ]
+"51
+[; ;main.c: 51:             ReadyReceiveBuffer();
+[e ( _ReadyReceiveBuffer ..  ]
+"52
+[; ;main.c: 52:         }
+}
+[e :U 462 ]
+"53
+[; ;main.c: 53:     }
+}
+[e :U 459 ]
+[e $U 460  ]
+[e :U 461 ]
+"54
+[; ;main.c: 54: }
 [e :UE 458 ]
 }
-"14
-[; ;uart.c: 14: void SML_SendString(const char* command,int len)
-[v _SML_SendString `(v ~T0 @X0 1 ef2`*Cuc`i ]
-"15
-[; ;uart.c: 15: {
-{
-[e :U _SML_SendString ]
-"14
-[; ;uart.c: 14: void SML_SendString(const char* command,int len)
-[v _command `*Cuc ~T0 @X0 1 r1 ]
-[v _len `i ~T0 @X0 1 r2 ]
-"15
-[; ;uart.c: 15: {
-[f ]
-"16
-[; ;uart.c: 16:     while (len-- !=0)
-[e $U 463  ]
-[e :U 464 ]
-"17
-[; ;uart.c: 17:         uart[SML].Write(*command++);
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> *U ++ _command * -> -> 1 `i `x -> -> # *U _command `i `x `uc ]
-[e :U 463 ]
-"16
-[; ;uart.c: 16:     while (len-- !=0)
-[e $ != -- _len -> 1 `i -> 0 `i 464  ]
-[e :U 465 ]
-"18
-[; ;uart.c: 18: }
-[e :UE 462 ]
-}
-"22
-[; ;uart.c: 22: void INIT_SMART_LIGHT (void)
-[v _INIT_SMART_LIGHT `(v ~T0 @X0 1 ef ]
-"23
-[; ;uart.c: 23: {
-{
-[e :U _INIT_SMART_LIGHT ]
-[f ]
-"24
-[; ;uart.c: 24:     uart[SML].SetRxISR(ReceivedMessage);
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 6 (1 &U _ReceivedMessage ]
-"25
-[; ;uart.c: 25:     SendString("SYS FACTORY RESET");
-[e ( _SendString (1 :s 1C ]
-"26
-[; ;uart.c: 26:     SendString("SMART LIGHT INIT");
-[e ( _SendString (1 :s 2C ]
-"27
-[; ;uart.c: 27: }
-[e :UE 466 ]
-}
-"28
-[; ;uart.c: 28: void ReceivedMessage(void)
-[v _ReceivedMessage `(v ~T0 @X0 1 ef ]
-"29
-[; ;uart.c: 29: {
-{
-[e :U _ReceivedMessage ]
-[f ]
-"30
-[; ;uart.c: 30:     uart[SML].RxDefaultISR();
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 5 ..  ]
-"31
-[; ;uart.c: 31:     while (!uart[SML].DataReady()) {
-[e $U 468  ]
-[e :U 469 ]
-{
-"32
-[; ;uart.c: 32:         __nop();
-[e ( ___nop ..  ]
-"33
-[; ;uart.c: 33:     }
-}
-[e :U 468 ]
-"31
-[; ;uart.c: 31:     while (!uart[SML].DataReady()) {
-[e $ ! != -> ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 3 ..  `i -> 0 `i 469  ]
-[e :U 470 ]
-"34
-[; ;uart.c: 34:     uint8_t readByte = uart[SML].Read();
-[v _readByte `uc ~T0 @X0 1 a ]
-[e = _readByte ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 0 ..  ]
-"35
-[; ;uart.c: 35:     if ((ResponseIndex < 64) )
-[e $ ! < -> _ResponseIndex `i -> 64 `i 471  ]
-"36
-[; ;uart.c: 36:         ResponseBuffer[ResponseIndex++] = readByte;
-[e = *U + &U _ResponseBuffer * -> ++ _ResponseIndex -> -> 1 `i `uc `ux -> -> # *U &U _ResponseBuffer `ui `ux -> _readByte `uc ]
-[e :U 471 ]
-"37
-[; ;uart.c: 37: }
-[e :UE 467 ]
-}
-"41
-[; ;uart.c: 41: void ReadyReceiveBuffer (void)
-[v _ReadyReceiveBuffer `(v ~T0 @X0 1 ef ]
-"42
-[; ;uart.c: 42: {
-{
-[e :U _ReadyReceiveBuffer ]
-[f ]
-"43
-[; ;uart.c: 43:     ResponseIndex = 0;
-[e = _ResponseIndex -> -> 0 `i `uc ]
-"44
-[; ;uart.c: 44:     for (uint8_t position = 0; position < 64; position++)
-{
-[v _position `uc ~T0 @X0 1 a ]
-[e = _position -> -> 0 `i `uc ]
-[e $ < -> _position `i -> 64 `i 473  ]
-[e $U 474  ]
-[e :U 473 ]
-"45
-[; ;uart.c: 45:         ResponseBuffer[position] = 0;
-[e = *U + &U _ResponseBuffer * -> _position `ux -> -> # *U &U _ResponseBuffer `ui `ux -> -> 0 `i `uc ]
-[e ++ _position -> -> 1 `i `uc ]
-[e $ < -> _position `i -> 64 `i 473  ]
-[e :U 474 ]
-}
-"46
-[; ;uart.c: 46: }
-[e :UE 472 ]
-}
-"47
-[; ;uart.c: 47: char* GetResponse(void)
-[v _GetResponse `(*uc ~T0 @X0 1 ef ]
-"48
-[; ;uart.c: 48: {
-{
-[e :U _GetResponse ]
-[f ]
-"49
-[; ;uart.c: 49:     return ResponseBuffer;
-[e ) &U _ResponseBuffer ]
-[e $UE 476  ]
-"50
-[; ;uart.c: 50: }
-[e :UE 476 ]
-}
-"51
-[; ;uart.c: 51: void blockingWait (uint16_t limit)
-[v _blockingWait `(v ~T0 @X0 1 ef1`us ]
-"52
-[; ;uart.c: 52: {
-{
-[e :U _blockingWait ]
-"51
-[; ;uart.c: 51: void blockingWait (uint16_t limit)
-[v _limit `us ~T0 @X0 1 r1 ]
-"52
-[; ;uart.c: 52: {
-[f ]
-"53
-[; ;uart.c: 53:     for (uint16_t counter = 0; counter < limit; counter++)
-{
-[v _counter `us ~T0 @X0 1 a ]
-[e = _counter -> -> 0 `i `us ]
-[e $U 481  ]
-[e :U 478 ]
-"54
-[; ;uart.c: 54:   _delay((unsigned long)((10)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[e ++ _counter -> -> 1 `i `us ]
-[e :U 481 ]
-[e $ < -> _counter `ui -> _limit `ui 478  ]
-[e :U 479 ]
-}
-"55
-[; ;uart.c: 55: }
-[e :UE 477 ]
-}
-[a 2C 83 77 65 82 84 32 76 73 71 72 84 32 73 78 73 84 0 ]
-[a 1C 83 89 83 32 70 65 67 84 79 82 89 32 82 69 83 69 84 0 ]
+[a 1C 76 69 86 69 76 0 ]

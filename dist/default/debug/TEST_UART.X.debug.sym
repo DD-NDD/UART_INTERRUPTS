@@ -535,8 +535,8 @@ text11 95A 981 CODE 95A 0
 stringtext4 982 98D STRCODE 982 0
 inittext 98E A13 CODE 98E 0
 %locals
-dist/default/production\TEST_UART.X.production.o
-C:\Users\DUYNGO~1\AppData\Local\Temp\s7n0.
+dist/default/debug\TEST_UART.X.debug.o
+C:\Users\DUYNGO~1\AppData\Local\Temp\s378.
 2681 23 0 CODE 0
 2684 23 0 CODE 0
 2791 23 0 CODE 0
