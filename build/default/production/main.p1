@@ -36,12 +36,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 51: char *strstr (const char *, const char *);
 [v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"23 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 23: int atoi (const char *);
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"40 ./uart.h
-[; ;./uart.h: 40: void SML_SendString(const char*,int len);
-[v _SML_SendString `(v ~T0 @X0 0 ef2`*Cuc`i ]
+"29
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -777,37 +774,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 44:             int num = 0;
 [v _num `i ~T0 @X0 1 a ]
 [e = _num -> 0 `i ]
-"45
-[; ;main.c: 45:             num = atoi(Num_Char);
-[e = _num ( _atoi (1 -> &U _Num_Char `*Cuc ]
-"46
-[; ;main.c: 46:             if(num == 100)
-[e $ ! == _num -> 100 `i 463  ]
-"47
-[; ;main.c: 47:             {
-{
-"48
-[; ;main.c: 48:                 SML_SendString(Storage2,9);
-[e ( _SML_SendString (2 , -> &U _Storage2 `*Cuc -> 9 `i ]
-"49
-[; ;main.c: 49:             }
-}
-[e :U 463 ]
+"50
+[; ;main.c: 50:             memset(Storage2,((void*)0),9);
+[e ( _memset (3 , , -> &U _Storage2 `*v -> -> -> 0 `i `*v `i -> -> 9 `i `ui ]
 "51
-[; ;main.c: 51:             ReadyReceiveBuffer();
-[e ( _ReadyReceiveBuffer ..  ]
+[; ;main.c: 51:             memset(Num_Char,((void*)0),3);
+[e ( _memset (3 , , -> &U _Num_Char `*v -> -> -> 0 `i `*v `i -> -> 3 `i `ui ]
 "52
-[; ;main.c: 52:         }
+[; ;main.c: 52:             ReadyReceiveBuffer();
+[e ( _ReadyReceiveBuffer ..  ]
+"53
+[; ;main.c: 53:         }
 }
 [e :U 462 ]
-"53
-[; ;main.c: 53:     }
+"54
+[; ;main.c: 54:     }
 }
 [e :U 459 ]
 [e $U 460  ]
 [e :U 461 ]
-"54
-[; ;main.c: 54: }
+"55
+[; ;main.c: 55: }
 [e :UE 458 ]
 }
 [a 1C 76 69 86 69 76 0 ]

@@ -4903,12 +4903,13 @@ void main(void)
             Num_Char[1] = Storage2[7];
             Num_Char[2] = Storage2[8];
             int num = 0;
-            num = atoi(Num_Char);
-            if(num == 100)
-            {
-                SML_SendString(Storage2,9);
-            }
 
+
+
+
+
+            memset(Storage2,((void*)0),9);
+            memset(Num_Char,((void*)0),3);
             ReadyReceiveBuffer();
         }
     }
