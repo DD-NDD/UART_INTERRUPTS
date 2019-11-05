@@ -47,5 +47,5 @@ char* GetResponse(void)
 void blockingWait (uint16_t limit)
 {
     for (uint16_t counter = 0; counter < limit; counter++)
-		__delay_ms(15);
+		__delay_ms(10);
 }
