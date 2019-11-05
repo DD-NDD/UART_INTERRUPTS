@@ -2,7 +2,6 @@
 #include "uart.h"
 #include "string.h"
 char* rxData;
-char* lastRxData;
 void main(void)
 {
     SYSTEM_Initialize();
