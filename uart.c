@@ -6,11 +6,10 @@ const uart_functions_t uart[] = {
 };
 void SendString(const char* command)
 {
-    int i = ResponseIndex;
     while (ResponseIndex-- != 0)
         uart[SML].Write(*command++);
-    uart[SML].Write('\r');
-    uart[SML].Write('\n');
+    //uart[SML].Write('\r');
+    //uart[SML].Write('\n');
 }
 //*********************************************************
 //          Accessible Example Functions
