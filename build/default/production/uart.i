@@ -4777,8 +4777,8 @@ typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); _Bool (*T
 
 extern const uart_functions_t uart[];
 
-char ResponseBuffer [128] = {0};
-char ReadStorage [128] = {0};
+char ResponseBuffer [32] = {0};
+char ReadStorage [32] = {0};
 void blockingWait(uint16_t);
 void ReadyReceiveBuffer(void);
 char* GetResponse(void);
@@ -4873,9 +4873,10 @@ const uart_functions_t uart[] = {
 };
 void SendString(const char* command)
 {
-    while (*command != '\0')
+    int i = ResponseIndex;
+    while (ResponseIndex-- != 0)
         uart[SML].Write(*command++);
-
+    uart[SML].Write('\r');
     uart[SML].Write('\n');
 }
 
@@ -4883,15 +4884,18 @@ void SendString(const char* command)
 
 void INIT_SMART_LIGHT (void)
 {
-
     uart[SML].SetRxISR(ReceivedMessage);
-# 32 "uart.c"
+    SendString("SYS FACTORY RESET");
+    SendString("SMART LIGHT INIT");
 }
 void ReceivedMessage(void)
 {
     uart[SML].RxDefaultISR();
+    while (!uart[SML].DataReady()) {
+        __nop();
+    }
     uint8_t readByte = uart[SML].Read();
-    if ( (readByte != '\0') && (ResponseIndex < 128) )
+    if ((ResponseIndex < 32) )
         ResponseBuffer[ResponseIndex++] = readByte;
 }
 
@@ -4900,7 +4904,7 @@ void ReceivedMessage(void)
 void ReadyReceiveBuffer (void)
 {
     ResponseIndex = 0;
-    for (uint8_t position = 0; position < 128; position++)
+    for (uint8_t position = 0; position < 32; position++)
         ResponseBuffer[position] = 0;
 }
 char* GetResponse(void)

@@ -2,6 +2,7 @@
 #include "uart.h"
 #include "string.h"
 char* rxData;
+char* lastRxData;
 void main(void)
 {
     SYSTEM_Initialize();
@@ -10,12 +11,11 @@ void main(void)
     INIT_SMART_LIGHT ();
     while (1)
     {
-        rxData = GetResponse();               
-        if(*rxData != NULL)
+        if(ResponseIndex != 0)
         {
-            blockingWait(1);
-            strcpy(ReadStorage, rxData);
-            SendString(ReadStorage);
+            blockingWait(2);
+            rxData = GetResponse();
+            SendString(rxData);
             ReadyReceiveBuffer(); 
         }
     }

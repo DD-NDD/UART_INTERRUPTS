@@ -4794,8 +4794,8 @@ typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); _Bool (*T
 
 extern const uart_functions_t uart[];
 
-char ResponseBuffer [128] = {0};
-char ReadStorage [128] = {0};
+char ResponseBuffer [32] = {0};
+char ReadStorage [32] = {0};
 void blockingWait(uint16_t);
 void ReadyReceiveBuffer(void);
 char* GetResponse(void);
@@ -4862,6 +4862,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 3 "main.c" 2
 
 char* rxData;
+char* lastRxData;
 void main(void)
 {
     SYSTEM_Initialize();
@@ -4870,12 +4871,11 @@ void main(void)
     INIT_SMART_LIGHT ();
     while (1)
     {
-        rxData = GetResponse();
-        if(*rxData != ((void*)0))
+        if(ResponseIndex != 0)
         {
-            blockingWait(1);
-            strcpy(ReadStorage, rxData);
-            SendString(ReadStorage);
+            blockingWait(2);
+            rxData = GetResponse();
+            SendString(rxData);
             ReadyReceiveBuffer();
         }
     }

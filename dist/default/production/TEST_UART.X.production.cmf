@@ -12,42 +12,45 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\TEST_UART.X.production.o
-cinit CODE 0 23 23 1E 2
-text1 CODE 0 147 147 25 2
-text2 CODE 0 1E9 1E9 19 2
-text3 CODE 0 11A 11A 2D 2
-text4 CODE 0 16C 16C 23 2
-text5 CODE 0 25A 25A C 2
-text6 CODE 0 290 290 4 2
-text7 CODE 0 1CF 1CF 1A 2
-text8 CODE 0 266 266 6 2
-text9 CODE 0 41 41 43 2
-text10 CODE 0 26C 26C 6 2
-text11 CODE 0 272 272 6 2
-text12 CODE 0 278 278 6 2
-text13 CODE 0 27E 27E 6 2
-text14 CODE 0 22C 22C 13 2
-text15 CODE 0 23F 23F F 2
-text16 CODE 0 284 284 6 2
-text17 CODE 0 28A 28A 6 2
-text19 CODE 0 BA BA 32 2
-text20 CODE 0 EC EC 2E 2
-text21 CODE 0 294 294 4 2
+cinit CODE 0 23 23 17 2
+text1 CODE 0 1D9 1D9 19 2
+text2 CODE 0 250 250 C 2
+text3 CODE 0 28E 28E 4 2
+text4 CODE 0 1BF 1BF 1A 2
+text5 CODE 0 26A 26A 6 2
+text6 CODE 0 3A 3A 3E 2
+text7 CODE 0 270 270 6 2
+text8 CODE 0 276 276 6 2
+text9 CODE 0 27C 27C 6 2
+text10 CODE 0 282 282 6 2
+text11 CODE 0 240 240 10 2
+text12 CODE 0 185 185 1D 2
+text13 CODE 0 78 78 3A 2
+text14 CODE 0 163 163 22 2
+text15 CODE 0 288 288 6 2
+text16 CODE 0 299 299 2 2
+text18 CODE 0 E6 E6 32 2
+text19 CODE 0 B2 B2 34 2
+text20 CODE 0 25C 25C 8 2
+text21 CODE 0 292 292 4 2
 text22 CODE 0 29B 29B 1 2
-text23 CODE 0 298 298 3 2
-text24 CODE 0 202 202 16 2
-text25 CODE 0 18F 18F 23 2
-text26 CODE 0 1B2 1B2 1D 2
-nvBANK0 BANK0 1 48 48 B 1
-maintext CODE 0 84 84 36 2
-cstackCOMMON COMMON 1 75 75 5 1
-cstackBANK0 BANK0 1 3C 3C C 1
-stringtext1 STRCODE 0 218 218 14 2
+text23 CODE 0 296 296 3 2
+text24 CODE 0 1F2 1F2 17 2
+text25 CODE 0 13E 13E 25 2
+text26 CODE 0 1A2 1A2 1D 2
+nvBANK0 BANK0 1 5D 5D B 1
+maintext CODE 0 118 118 26 2
+cstackCOMMON COMMON 1 70 70 6 1
+cstackBANK0 BANK0 1 68 68 6 1
+stringtext1 STRCODE 0 209 209 14 2
+stringtext2 STRCODE 0 21D 21D 12 2
+stringtext3 STRCODE 0 22F 22F 11 2
 intentry CODE 0 4 4 1D 2
-bssBANK0 BANK0 1 20 20 1C 1
-clrtext CODE 0 24E 24E C 2
-bssCOMMON COMMON 1 70 70 5 1
-$C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
+bssBANK0 BANK0 1 20 20 3D 1
+bssBANK1 BANK1 1 A0 A0 20 1
+clrtext CODE 0 264 264 6 2
+bssCOMMON COMMON 1 76 76 4 1
+$C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 21 21 2 2
 config CONFIG 0 8007 8007 2 2
@@ -57,12 +60,20 @@ config CONFIG 0 8007 8007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 53-6F 1
-RAM A0-EF 1
+RAM 6E-6F 1
+RAM C0-EF 1
 RAM 120-16F 1
-BANK0 53-6F 1
-BANK1 A0-EF 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-32F 1
+BANK0 6E-6F 1
+BANK1 C0-EF 1
 BANK2 120-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-32F 1
 CONST 2-3 2
 CONST 29C-1FFF 2
 ENTRY 2-3 2
@@ -90,7 +101,7 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2033-20EF 1
+STACK 2070-21EF 1
 CODE 2-3 2
 CODE 29C-1FFF 2
 SFR0 0-1F 1
@@ -123,35 +134,28 @@ STRING 29C-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\TEST_UART.X.production.o
-23 cinit CODE >2573:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-23 cinit CODE >2576:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-23 cinit CODE >2641:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-24 cinit CODE >2642:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-25 cinit CODE >2643:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-26 cinit CODE >2644:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-27 cinit CODE >2645:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-28 cinit CODE >2646:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-29 cinit CODE >2647:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-2A cinit CODE >2648:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-2B cinit CODE >2649:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-2E cinit CODE >2653:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-2F cinit CODE >2654:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-30 cinit CODE >2655:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-31 cinit CODE >2656:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-32 cinit CODE >2657:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-33 cinit CODE >2661:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-34 cinit CODE >2662:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-35 cinit CODE >2663:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-36 cinit CODE >2664:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-37 cinit CODE >2665:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-38 cinit CODE >2666:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-39 cinit CODE >2667:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-3A cinit CODE >2668:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-3B cinit CODE >2669:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-3D cinit CODE >2675:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-3D cinit CODE >2677:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-3E cinit CODE >2678:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-3F cinit CODE >2679:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
+23 cinit CODE >2613:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+23 cinit CODE >2616:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+23 cinit CODE >2685:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+24 cinit CODE >2686:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+25 cinit CODE >2687:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+26 cinit CODE >2688:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+27 cinit CODE >2692:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+28 cinit CODE >2693:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+29 cinit CODE >2694:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+2A cinit CODE >2695:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+2B cinit CODE >2696:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+2C cinit CODE >2697:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+2F cinit CODE >2701:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+30 cinit CODE >2702:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+31 cinit CODE >2703:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+32 cinit CODE >2704:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+33 cinit CODE >2705:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+34 cinit CODE >2706:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+36 cinit CODE >2712:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+36 cinit CODE >2714:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+37 cinit CODE >2715:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+38 cinit CODE >2716:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
 4 intentry CODE >52:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_manager.c
 8 intentry CODE >57:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_manager.c
@@ -160,186 +164,184 @@ E intentry CODE >59:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_man
 14 intentry CODE >61:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_manager.c
 1A intentry CODE >63:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_manager.c
 1F intentry CODE >74:F:\Smart Light\TEST_UART.X\mcc_generated_files/interrupt_manager.c
-1B2 text26 CODE >197:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1B2 text26 CODE >201:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1B7 text26 CODE >203:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1C2 text26 CODE >204:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1C5 text26 CODE >206:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1C6 text26 CODE >208:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1CB text26 CODE >209:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1CC text26 CODE >210:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1CC text26 CODE >212:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1CE text26 CODE >214:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-18F text25 CODE >151:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-18F text25 CODE >155:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-192 text25 CODE >159:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-19B text25 CODE >161:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1A7 text25 CODE >162:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1AA text25 CODE >164:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1AB text25 CODE >166:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1AD text25 CODE >167:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1AF text25 CODE >168:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1B0 text25 CODE >170:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-1B1 text25 CODE >171:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-202 text24 CODE >240:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-202 text24 CODE >242:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-20F text24 CODE >243:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-212 text24 CODE >245:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-213 text24 CODE >247:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-217 text24 CODE >248:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-298 text23 CODE >260:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-298 text23 CODE >261:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-29A text23 CODE >262:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1A2 text26 CODE >197:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1A2 text26 CODE >201:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1A7 text26 CODE >203:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1B3 text26 CODE >204:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1B6 text26 CODE >206:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1B7 text26 CODE >208:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1BB text26 CODE >209:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1BC text26 CODE >210:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1BC text26 CODE >212:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1BE text26 CODE >214:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+13E text25 CODE >151:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+13E text25 CODE >155:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+142 text25 CODE >159:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+14A text25 CODE >161:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+156 text25 CODE >162:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+159 text25 CODE >164:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+15A text25 CODE >166:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+15C text25 CODE >167:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+15F text25 CODE >168:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+161 text25 CODE >170:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+162 text25 CODE >171:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1F2 text24 CODE >240:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1F2 text24 CODE >242:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+1FF text24 CODE >243:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+202 text24 CODE >245:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+203 text24 CODE >247:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+208 text24 CODE >248:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+296 text23 CODE >260:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+296 text23 CODE >261:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+298 text23 CODE >262:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
 29B text22 CODE >250:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-294 text21 CODE >252:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-294 text21 CODE >255:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-296 text21 CODE >256:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-297 text21 CODE >258:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-EC text20 CODE >33:F:\Smart Light\TEST_UART.X\uart.c
-EC text20 CODE >35:F:\Smart Light\TEST_UART.X\uart.c
-F5 text20 CODE >36:F:\Smart Light\TEST_UART.X\uart.c
-101 text20 CODE >37:F:\Smart Light\TEST_UART.X\uart.c
-109 text20 CODE >38:F:\Smart Light\TEST_UART.X\uart.c
-119 text20 CODE >39:F:\Smart Light\TEST_UART.X\uart.c
-BA text19 CODE >216:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-BA text19 CODE >219:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-BF text19 CODE >221:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-C2 text19 CODE >222:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-C7 text19 CODE >223:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-CD text19 CODE >226:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-D0 text19 CODE >227:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-D5 text19 CODE >228:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-DB text19 CODE >231:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-E2 text19 CODE >232:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-E8 text19 CODE >233:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-E9 text19 CODE >234:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-EB text19 CODE >238:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-28A text17 CODE >49:F:\Smart Light\TEST_UART.X\uart.c
-28A text17 CODE >51:F:\Smart Light\TEST_UART.X\uart.c
-28F text17 CODE >52:F:\Smart Light\TEST_UART.X\uart.c
-284 text16 CODE >280:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-284 text16 CODE >281:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-289 text16 CODE >282:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-23F text15 CODE >17:F:\Smart Light\TEST_UART.X\uart.c
-23F text15 CODE >20:F:\Smart Light\TEST_UART.X\uart.c
-24D text15 CODE >32:F:\Smart Light\TEST_UART.X\uart.c
-22C text14 CODE >43:F:\Smart Light\TEST_UART.X\uart.c
-22C text14 CODE >45:F:\Smart Light\TEST_UART.X\uart.c
-22E text14 CODE >46:F:\Smart Light\TEST_UART.X\uart.c
-22F text14 CODE >47:F:\Smart Light\TEST_UART.X\uart.c
-27E text13 CODE >272:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-27E text13 CODE >273:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-283 text13 CODE >274:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-278 text12 CODE >264:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-278 text12 CODE >265:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-27D text12 CODE >266:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-272 text11 CODE >268:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-272 text11 CODE >269:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-277 text11 CODE >270:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-26C text10 CODE >276:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-26C text10 CODE >277:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-271 text10 CODE >278:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-41 text9 CODE >88:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-41 text9 CODE >91:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-43 text9 CODE >92:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-4B text9 CODE >93:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-4D text9 CODE >94:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-55 text9 CODE >98:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-58 text9 CODE >101:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-5A text9 CODE >104:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-5C text9 CODE >107:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-5E text9 CODE >110:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-5F text9 CODE >113:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-67 text9 CODE >114:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-6F text9 CODE >115:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-76 text9 CODE >117:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-78 text9 CODE >120:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-79 text9 CODE >121:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-7A text9 CODE >122:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-7E text9 CODE >124:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-7F text9 CODE >125:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-80 text9 CODE >126:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-81 text9 CODE >129:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-83 text9 CODE >130:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-266 text8 CODE >59:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-266 text8 CODE >62:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-269 text8 CODE >64:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-26B text8 CODE >65:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-1CF text7 CODE >55:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1CF text7 CODE >60:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1D1 text7 CODE >61:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1D2 text7 CODE >62:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1D3 text7 CODE >67:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1D6 text7 CODE >68:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1D8 text7 CODE >69:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1DA text7 CODE >74:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1DD text7 CODE >75:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1DF text7 CODE >76:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1E1 text7 CODE >81:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1E3 text7 CODE >82:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1E4 text7 CODE >83:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1E6 text7 CODE >89:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-1E8 text7 CODE >96:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
-290 text6 CODE >67:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-290 text6 CODE >70:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-293 text6 CODE >71:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-25A text5 CODE >50:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-25A text5 CODE >53:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-25D text5 CODE >54:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-260 text5 CODE >55:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-263 text5 CODE >56:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-265 text5 CODE >57:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
-16C text4 CODE >173:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-16C text4 CODE >175:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-170 text4 CODE >179:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-173 text4 CODE >181:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-177 text4 CODE >182:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-178 text4 CODE >183:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-178 text4 CODE >185:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-179 text4 CODE >186:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-186 text4 CODE >187:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-189 text4 CODE >189:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-18A text4 CODE >191:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-18C text4 CODE >193:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-18E text4 CODE >194:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
-11A text3 CODE >7:F:\Smart Light\TEST_UART.X\uart.c
-11A text3 CODE >9:F:\Smart Light\TEST_UART.X\uart.c
-122 text3 CODE >10:F:\Smart Light\TEST_UART.X\uart.c
-138 text3 CODE >9:F:\Smart Light\TEST_UART.X\uart.c
-139 text3 CODE >12:F:\Smart Light\TEST_UART.X\uart.c
-146 text3 CODE >13:F:\Smart Light\TEST_UART.X\uart.c
-1E9 text2 CODE >53:F:\Smart Light\TEST_UART.X\uart.c
-1E9 text2 CODE >55:F:\Smart Light\TEST_UART.X\uart.c
-1EC text2 CODE >56:F:\Smart Light\TEST_UART.X\uart.c
-147 text1 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
-147 text1 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
-14C text1 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
-150 text1 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
-84 maintext CODE >5:F:\Smart Light\TEST_UART.X\main.c
-84 maintext CODE >7:F:\Smart Light\TEST_UART.X\main.c
-87 maintext CODE >8:F:\Smart Light\TEST_UART.X\main.c
-88 maintext CODE >9:F:\Smart Light\TEST_UART.X\main.c
-89 maintext CODE >10:F:\Smart Light\TEST_UART.X\main.c
-8C maintext CODE >13:F:\Smart Light\TEST_UART.X\main.c
-94 maintext CODE >14:F:\Smart Light\TEST_UART.X\main.c
-9B maintext CODE >16:F:\Smart Light\TEST_UART.X\main.c
-A2 maintext CODE >17:F:\Smart Light\TEST_UART.X\main.c
-AE maintext CODE >18:F:\Smart Light\TEST_UART.X\main.c
-B6 maintext CODE >19:F:\Smart Light\TEST_UART.X\main.c
-24E clrtext CODE >2624:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-24E clrtext CODE >2625:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-24F clrtext CODE >2626:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-24F clrtext CODE >2627:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-250 clrtext CODE >2628:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-251 clrtext CODE >2629:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-252 clrtext CODE >2630:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-253 clrtext CODE >2631:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-254 clrtext CODE >2632:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-255 clrtext CODE >2633:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-256 clrtext CODE >2634:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-257 clrtext CODE >2635:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-258 clrtext CODE >2637:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
-259 clrtext CODE >2636:C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.
+292 text21 CODE >252:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+292 text21 CODE >255:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+294 text21 CODE >256:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+295 text21 CODE >258:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+25C text20 CODE >137:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+25C text20 CODE >139:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+263 text20 CODE >140:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+B2 text19 CODE >24:F:\Smart Light\TEST_UART.X\uart.c
+B2 text19 CODE >26:F:\Smart Light\TEST_UART.X\uart.c
+BB text19 CODE >27:F:\Smart Light\TEST_UART.X\uart.c
+C7 text19 CODE >28:F:\Smart Light\TEST_UART.X\uart.c
+C8 text19 CODE >27:F:\Smart Light\TEST_UART.X\uart.c
+C9 text19 CODE >30:F:\Smart Light\TEST_UART.X\uart.c
+D5 text19 CODE >31:F:\Smart Light\TEST_UART.X\uart.c
+D9 text19 CODE >32:F:\Smart Light\TEST_UART.X\uart.c
+E5 text19 CODE >33:F:\Smart Light\TEST_UART.X\uart.c
+E6 text18 CODE >216:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+E6 text18 CODE >219:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+EB text18 CODE >221:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+EE text18 CODE >222:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+F3 text18 CODE >223:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+F9 text18 CODE >226:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+FC text18 CODE >227:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+101 text18 CODE >228:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+107 text18 CODE >231:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+10E text18 CODE >232:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+114 text18 CODE >233:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+115 text18 CODE >234:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+117 text18 CODE >238:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+299 text16 CODE >43:F:\Smart Light\TEST_UART.X\uart.c
+299 text16 CODE >45:F:\Smart Light\TEST_UART.X\uart.c
+29A text16 CODE >46:F:\Smart Light\TEST_UART.X\uart.c
+288 text15 CODE >280:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+288 text15 CODE >281:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+28D text15 CODE >282:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+163 text14 CODE >173:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+163 text14 CODE >175:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+167 text14 CODE >179:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+16A text14 CODE >181:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+16D text14 CODE >182:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+16E text14 CODE >183:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+16E text14 CODE >185:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+16F text14 CODE >186:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+17B text14 CODE >187:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+17E text14 CODE >189:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+17F text14 CODE >191:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+182 text14 CODE >193:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+184 text14 CODE >194:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+78 text13 CODE >7:F:\Smart Light\TEST_UART.X\uart.c
+78 text13 CODE >10:F:\Smart Light\TEST_UART.X\uart.c
+7D text13 CODE >11:F:\Smart Light\TEST_UART.X\uart.c
+94 text13 CODE >10:F:\Smart Light\TEST_UART.X\uart.c
+95 text13 CODE >12:F:\Smart Light\TEST_UART.X\uart.c
+A3 text13 CODE >13:F:\Smart Light\TEST_UART.X\uart.c
+B1 text13 CODE >14:F:\Smart Light\TEST_UART.X\uart.c
+185 text12 CODE >18:F:\Smart Light\TEST_UART.X\uart.c
+185 text12 CODE >20:F:\Smart Light\TEST_UART.X\uart.c
+192 text12 CODE >21:F:\Smart Light\TEST_UART.X\uart.c
+19A text12 CODE >22:F:\Smart Light\TEST_UART.X\uart.c
+1A1 text12 CODE >23:F:\Smart Light\TEST_UART.X\uart.c
+240 text11 CODE >37:F:\Smart Light\TEST_UART.X\uart.c
+240 text11 CODE >39:F:\Smart Light\TEST_UART.X\uart.c
+241 text11 CODE >40:F:\Smart Light\TEST_UART.X\uart.c
+242 text11 CODE >41:F:\Smart Light\TEST_UART.X\uart.c
+282 text10 CODE >272:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+282 text10 CODE >273:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+287 text10 CODE >274:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+27C text9 CODE >264:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+27C text9 CODE >265:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+281 text9 CODE >266:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+276 text8 CODE >268:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+276 text8 CODE >269:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+27B text8 CODE >270:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+270 text7 CODE >276:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+270 text7 CODE >277:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+275 text7 CODE >278:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+3A text6 CODE >88:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+3A text6 CODE >91:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+3C text6 CODE >92:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+43 text6 CODE >93:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+45 text6 CODE >94:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+4C text6 CODE >98:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+4F text6 CODE >101:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+51 text6 CODE >104:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+53 text6 CODE >107:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+55 text6 CODE >110:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+56 text6 CODE >113:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+5D text6 CODE >114:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+64 text6 CODE >115:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+6A text6 CODE >117:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+6C text6 CODE >120:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+6D text6 CODE >121:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+6E text6 CODE >122:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+72 text6 CODE >124:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+73 text6 CODE >125:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+74 text6 CODE >126:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+75 text6 CODE >129:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+77 text6 CODE >130:F:\Smart Light\TEST_UART.X\mcc_generated_files/eusart.c
+26A text5 CODE >59:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+26A text5 CODE >62:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+26D text5 CODE >64:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+26F text5 CODE >65:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+1BF text4 CODE >55:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1BF text4 CODE >60:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1C1 text4 CODE >61:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1C2 text4 CODE >62:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1C3 text4 CODE >67:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1C6 text4 CODE >68:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1C8 text4 CODE >69:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1CA text4 CODE >74:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1CD text4 CODE >75:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1CF text4 CODE >76:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1D1 text4 CODE >81:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1D3 text4 CODE >82:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1D4 text4 CODE >83:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1D6 text4 CODE >89:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+1D8 text4 CODE >96:F:\Smart Light\TEST_UART.X\mcc_generated_files/pin_manager.c
+28E text3 CODE >67:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+28E text3 CODE >70:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+291 text3 CODE >71:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+250 text2 CODE >50:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+250 text2 CODE >53:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+253 text2 CODE >54:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+256 text2 CODE >55:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+259 text2 CODE >56:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+25B text2 CODE >57:F:\Smart Light\TEST_UART.X\mcc_generated_files/mcc.c
+1D9 text1 CODE >47:F:\Smart Light\TEST_UART.X\uart.c
+1D9 text1 CODE >49:F:\Smart Light\TEST_UART.X\uart.c
+1DC text1 CODE >50:F:\Smart Light\TEST_UART.X\uart.c
+118 maintext CODE >6:F:\Smart Light\TEST_UART.X\main.c
+118 maintext CODE >8:F:\Smart Light\TEST_UART.X\main.c
+11B maintext CODE >9:F:\Smart Light\TEST_UART.X\main.c
+11C maintext CODE >10:F:\Smart Light\TEST_UART.X\main.c
+11D maintext CODE >11:F:\Smart Light\TEST_UART.X\main.c
+120 maintext CODE >14:F:\Smart Light\TEST_UART.X\main.c
+123 maintext CODE >16:F:\Smart Light\TEST_UART.X\main.c
+12A maintext CODE >17:F:\Smart Light\TEST_UART.X\main.c
+131 maintext CODE >18:F:\Smart Light\TEST_UART.X\main.c
+13A maintext CODE >19:F:\Smart Light\TEST_UART.X\main.c
+264 clrtext CODE >2674:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+264 clrtext CODE >2675:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+265 clrtext CODE >2676:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+265 clrtext CODE >2677:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+266 clrtext CODE >2678:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+267 clrtext CODE >2679:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+268 clrtext CODE >2680:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
+269 clrtext CODE >2681:C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -352,104 +354,104 @@ B6 maintext CODE >19:F:\Smart Light\TEST_UART.X\main.c
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_GetResponse 514 0 CODE 0 text17 dist/default/production\TEST_UART.X.production.o
+_GetResponse 532 0 CODE 0 text16 dist/default/production\TEST_UART.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_EUSART_Read 31E 0 CODE 0 text25 dist/default/production\TEST_UART.X.production.o
+_EUSART_Read 27C 0 CODE 0 text25 dist/default/production\TEST_UART.X.production.o
 __Hspace_0 8009 0 ABS 0 - -
-__Hspace_1 7A 0 ABS 0 - -
+__Hspace_1 C0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-_ReadyReceiveBuffer 458 0 CODE 0 text14 dist/default/production\TEST_UART.X.production.o
-_blockingWait 3D2 0 CODE 0 text2 dist/default/production\TEST_UART.X.production.o
+_ReadyReceiveBuffer 480 0 CODE 0 text11 dist/default/production\TEST_UART.X.production.o
+_blockingWait 3B2 0 CODE 0 text1 dist/default/production\TEST_UART.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_WDT_Initialize 528 0 CODE 0 text6 dist/default/production\TEST_UART.X.production.o
-_SendString 234 0 CODE 0 text3 dist/default/production\TEST_UART.X.production.o
+__end_of_WDT_Initialize 524 0 CODE 0 text3 dist/default/production\TEST_UART.X.production.o
+_SendString F0 0 CODE 0 text13 dist/default/production\TEST_UART.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-_EUSART_RxDefaultInterruptHandler 4E 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+_EUSART_RxDefaultInterruptHandler 63 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
 __size_of_ReceivedMessage 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _LATA 10C 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _LATB 10D 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _LATC 10E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-_main 108 0 CODE 0 maintext dist/default/production\TEST_UART.X.production.o
-_uart 430 0 STRCODE 0 stringtext1 dist/default/production\TEST_UART.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+_main 230 0 CODE 0 maintext dist/default/production\TEST_UART.X.production.o
+_uart 412 0 STRCODE 0 stringtext1 dist/default/production\TEST_UART.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-start 42 0 CODE 0 init C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-_EUSART_Write 2D8 0 CODE 0 text4 dist/default/production\TEST_UART.X.production.o
+start 42 0 CODE 0 init C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+_EUSART_Write 2C6 0 CODE 0 text14 dist/default/production\TEST_UART.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_of_EUSART_SetFramingErrorHandler 4FC 0 CODE 0 text12 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_SetOverrunErrorHandler 4F0 0 CODE 0 text11 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_SetFramingErrorHandler 504 0 CODE 0 text9 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_SetOverrunErrorHandler 4F8 0 CODE 0 text8 dist/default/production\TEST_UART.X.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-ReadyReceiveBuffer@position 3D 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_Initialize 108 0 CODE 0 text9 dist/default/production\TEST_UART.X.production.o
+ReadyReceiveBuffer@position 75 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_Initialize F0 0 CODE 0 text6 dist/default/production\TEST_UART.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_blockingWait 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _EUSART_is_tx_ready 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_INIT_SMART_LIGHT 47E 0 CODE 0 text15 dist/default/production\TEST_UART.X.production.o
+_INIT_SMART_LIGHT 30A 0 CODE 0 text12 dist/default/production\TEST_UART.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 _EUSART_DefaultFramingErrorHandler 536 0 CODE 0 text22 dist/default/production\TEST_UART.X.production.o
-_EUSART_DefaultOverrunErrorHandler 528 0 CODE 0 text21 dist/default/production\TEST_UART.X.production.o
+_EUSART_DefaultOverrunErrorHandler 524 0 CODE 0 text21 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_Write 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_Transmit_ISR 39E 0 CODE 0 text26 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_Transmit_ISR 37E 0 CODE 0 text26 dist/default/production\TEST_UART.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _eusartTxBuffer 30 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_SendString 28E 0 CODE 0 text3 dist/default/production\TEST_UART.X.production.o
-__end_of_blockingWait 404 0 CODE 0 text2 dist/default/production\TEST_UART.X.production.o
+__end_of_SendString 164 0 CODE 0 text13 dist/default/production\TEST_UART.X.production.o
+__end_of_blockingWait 3E4 0 CODE 0 text1 dist/default/production\TEST_UART.X.production.o
 _ANSELA 18C 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _ANSELB 18D 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _ANSELC 18E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _APFCON 11D 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_is_rx_ready 4C8 0 CODE 0 text20 dist/default/production\TEST_UART.X.production.o
 __end_of_INTERRUPT_InterruptManager 42 0 CODE 0 intentry dist/default/production\TEST_UART.X.production.o
-EUSART_SetRxInterruptHandler@interruptHandler 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_Write 31E 0 CODE 0 text4 dist/default/production\TEST_UART.X.production.o
+EUSART_SetRxInterruptHandler@interruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_Write 30A 0 CODE 0 text14 dist/default/production\TEST_UART.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
-ReceivedMessage@readByte 79 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
-___stackhi 20EF 0 ABS 0 - C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-___stacklo 2033 0 ABS 0 - C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-_EUSART_Initialize 82 0 CODE 0 text9 dist/default/production\TEST_UART.X.production.o
-_ReadStorage 20F0 0 ABS 1 - dist/default/production\TEST_UART.X.production.o
-_EUSART_is_rx_ready 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_PIN_MANAGER_Initialize 39E 0 CODE 0 text7 dist/default/production\TEST_UART.X.production.o
+ReceivedMessage@readByte 73 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+___stackhi 21EF 0 ABS 0 - C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+___stacklo 2070 0 ABS 0 - C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+_EUSART_Initialize 74 0 CODE 0 text6 dist/default/production\TEST_UART.X.production.o
+_EUSART_is_rx_ready 4B8 0 CODE 0 text20 dist/default/production\TEST_UART.X.production.o
+_PIN_MANAGER_Initialize 37E 0 CODE 0 text4 dist/default/production\TEST_UART.X.production.o
 start_initialization 46 0 CODE 0 cinit dist/default/production\TEST_UART.X.production.o
-_EUSART_SetErrorHandler 4FC 0 CODE 0 text13 dist/default/production\TEST_UART.X.production.o
+_EUSART_SetErrorHandler 504 0 CODE 0 text10 dist/default/production\TEST_UART.X.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_INIT_SMART_LIGHT 49C 0 CODE 0 text15 dist/default/production\TEST_UART.X.production.o
-EUSART_SetOverrunErrorHandler@interruptHandler 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+__end_of_INIT_SMART_LIGHT 344 0 CODE 0 text12 dist/default/production\TEST_UART.X.production.o
+EUSART_SetOverrunErrorHandler@interruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
 _eusartRxBuffer 28 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_DefaultErrorHandler 536 0 CODE 0 text23 dist/default/production\TEST_UART.X.production.o
-_EUSART_RxDataHandler 404 0 CODE 0 text24 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_DefaultErrorHandler 532 0 CODE 0 text23 dist/default/production\TEST_UART.X.production.o
+_EUSART_RxDataHandler 3E4 0 CODE 0 text24 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_INIT_SMART_LIGHT 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_SYSTEM_Initialize 4CC 0 CODE 0 text5 dist/default/production\TEST_UART.X.production.o
-clear_ram0 49C 0 CODE 0 clrtext dist/default/production\TEST_UART.X.production.o
+__end_of_SYSTEM_Initialize 4B8 0 CODE 0 text2 dist/default/production\TEST_UART.X.production.o
+clear_ram0 4C8 0 CODE 0 clrtext dist/default/production\TEST_UART.X.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__pcstackBANK0 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+__pcstackBANK0 68 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
 __end_of_EUSART_DefaultFramingErrorHandler 538 0 CODE 0 text22 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_DefaultOverrunErrorHandler 530 0 CODE 0 text21 dist/default/production\TEST_UART.X.production.o
-blockingWait@counter 3F 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_DefaultOverrunErrorHandler 52C 0 CODE 0 text21 dist/default/production\TEST_UART.X.production.o
+blockingWait@counter 69 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
 __size_of_ReadyReceiveBuffer 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_EUSART_TxDefaultInterruptHandler 50 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_GetResponse 520 0 CODE 0 text17 dist/default/production\TEST_UART.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-__end_of_EUSART_Read 364 0 CODE 0 text25 dist/default/production\TEST_UART.X.production.o
+_EUSART_TxDefaultInterruptHandler 65 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+__end_of_GetResponse 536 0 CODE 0 text16 dist/default/production\TEST_UART.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+__end_of_EUSART_Read 2C6 0 CODE 0 text25 dist/default/production\TEST_UART.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -460,8 +462,7 @@ __Hbank6 0 0 ABS 0 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit 82 0 CODE 0 cinit -
-__end_of_strcpy 2D8 0 CODE 0 text1 dist/default/production\TEST_UART.X.production.o
+__Hcinit 74 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Hsfr10 0 0 ABS 0 sfr10 -
@@ -526,7 +527,7 @@ __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
 __Lcinit 46 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
-EUSART_SetErrorHandler@interruptHandler 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+EUSART_SetErrorHandler@interruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -579,53 +580,57 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 430 0 STRCODE 0 stringtext1 dist/default/production\TEST_UART.X.production.o
-__pnvBANK0 48 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+__pstringtext1 412 0 STRCODE 0 stringtext1 dist/default/production\TEST_UART.X.production.o
+__pstringtext2 43A 0 STRCODE 0 stringtext2 dist/default/production\TEST_UART.X.production.o
+__pstringtext3 45E 0 STRCODE 0 stringtext3 dist/default/production\TEST_UART.X.production.o
+__pstringtext4 0 0 STRCODE 0 stringtext4 dist/default/production\TEST_UART.X.production.o
+__pnvBANK0 5D 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __S0 8009 0 ABS 0 - -
-__S1 7A 0 ABS 0 - -
+__S1 C0 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __size_of_SendString 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_Receive_ISR 1D8 0 CODE 0 text19 dist/default/production\TEST_UART.X.production.o
-_SYSTEM_Initialize 4B4 0 CODE 0 text5 dist/default/production\TEST_UART.X.production.o
-_EUSART_SetTxInterruptHandler 4D8 0 CODE 0 text10 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_Receive_ISR 230 0 CODE 0 text18 dist/default/production\TEST_UART.X.production.o
+_SYSTEM_Initialize 4A0 0 CODE 0 text2 dist/default/production\TEST_UART.X.production.o
+_EUSART_SetTxInterruptHandler 4E0 0 CODE 0 text7 dist/default/production\TEST_UART.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-strcpy@d 46 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-strcpy@s 44 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\DUYNGO~1\AppData\Local\Temp\s4to.o
-EUSART_Read@readValue 76 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\DUYNGO~1\AppData\Local\Temp\s86o.o
+EUSART_Read@readValue 71 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
 __Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lstringtext2 0 0 ABS 0 stringtext2 -
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+__Lstringtext4 0 0 ABS 0 stringtext4 -
 _INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production\TEST_UART.X.production.o
 _RCSTAbits 19D 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _PIE1bits 91 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-EUSART_SetFramingErrorHandler@interruptHandler 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-__ptext10 4D8 0 CODE 0 text10 dist/default/production\TEST_UART.X.production.o
-__ptext11 4E4 0 CODE 0 text11 dist/default/production\TEST_UART.X.production.o
-__ptext12 4F0 0 CODE 0 text12 dist/default/production\TEST_UART.X.production.o
-__ptext13 4FC 0 CODE 0 text13 dist/default/production\TEST_UART.X.production.o
-__ptext14 458 0 CODE 0 text14 dist/default/production\TEST_UART.X.production.o
-__ptext15 47E 0 CODE 0 text15 dist/default/production\TEST_UART.X.production.o
-__ptext16 508 0 CODE 0 text16 dist/default/production\TEST_UART.X.production.o
-__ptext17 514 0 CODE 0 text17 dist/default/production\TEST_UART.X.production.o
-__ptext19 174 0 CODE 0 text19 dist/default/production\TEST_UART.X.production.o
-__ptext20 1D8 0 CODE 0 text20 dist/default/production\TEST_UART.X.production.o
-__ptext21 528 0 CODE 0 text21 dist/default/production\TEST_UART.X.production.o
+EUSART_SetFramingErrorHandler@interruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+__ptext10 504 0 CODE 0 text10 dist/default/production\TEST_UART.X.production.o
+__ptext11 480 0 CODE 0 text11 dist/default/production\TEST_UART.X.production.o
+__ptext12 30A 0 CODE 0 text12 dist/default/production\TEST_UART.X.production.o
+__ptext13 F0 0 CODE 0 text13 dist/default/production\TEST_UART.X.production.o
+__ptext14 2C6 0 CODE 0 text14 dist/default/production\TEST_UART.X.production.o
+__ptext15 510 0 CODE 0 text15 dist/default/production\TEST_UART.X.production.o
+__ptext16 532 0 CODE 0 text16 dist/default/production\TEST_UART.X.production.o
+__ptext18 1CC 0 CODE 0 text18 dist/default/production\TEST_UART.X.production.o
+__ptext19 164 0 CODE 0 text19 dist/default/production\TEST_UART.X.production.o
+__ptext20 4B8 0 CODE 0 text20 dist/default/production\TEST_UART.X.production.o
+__ptext21 524 0 CODE 0 text21 dist/default/production\TEST_UART.X.production.o
 __ptext22 536 0 CODE 0 text22 dist/default/production\TEST_UART.X.production.o
-__ptext23 530 0 CODE 0 text23 dist/default/production\TEST_UART.X.production.o
-__ptext24 404 0 CODE 0 text24 dist/default/production\TEST_UART.X.production.o
-__ptext25 31E 0 CODE 0 text25 dist/default/production\TEST_UART.X.production.o
-__ptext26 364 0 CODE 0 text26 dist/default/production\TEST_UART.X.production.o
+__ptext23 52C 0 CODE 0 text23 dist/default/production\TEST_UART.X.production.o
+__ptext24 3E4 0 CODE 0 text24 dist/default/production\TEST_UART.X.production.o
+__ptext25 27C 0 CODE 0 text25 dist/default/production\TEST_UART.X.production.o
+__ptext26 344 0 CODE 0 text26 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_EUSART_Receive_ISR 174 0 CODE 0 text19 dist/default/production\TEST_UART.X.production.o
-?_GetResponse 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_PIN_MANAGER_Initialize 3D2 0 CODE 0 text7 dist/default/production\TEST_UART.X.production.o
+_EUSART_Receive_ISR 1CC 0 CODE 0 text18 dist/default/production\TEST_UART.X.production.o
+__end_of_PIN_MANAGER_Initialize 3B2 0 CODE 0 text4 dist/default/production\TEST_UART.X.production.o
 _BAUDCON 19F 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
@@ -649,86 +654,86 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 108 0 CODE 0 maintext dist/default/production\TEST_UART.X.production.o
+__pmaintext 230 0 CODE 0 maintext dist/default/production\TEST_UART.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_SetErrorHandler 508 0 CODE 0 text13 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_SetErrorHandler 510 0 CODE 0 text10 dist/default/production\TEST_UART.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_rxData 38 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
-_strcpy 28E 0 CODE 0 text1 dist/default/production\TEST_UART.X.production.o
+_rxData 39 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
+__size_of_EUSART_is_rx_ready 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_GetResponse 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_EUSART_FramingErrorHandler 4C 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
-_EUSART_OverrunErrorHandler 4A 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
-SendString@command 3E 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-_EUSART_SetRxInterruptHandler 508 0 CODE 0 text16 dist/default/production\TEST_UART.X.production.o
-__pbssBIGRAM 20F0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-strcpy@dest 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-_EUSART_ErrorHandler 48 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+_EUSART_FramingErrorHandler 61 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+_EUSART_OverrunErrorHandler 5F 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+SendString@command 68 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+_EUSART_SetRxInterruptHandler 510 0 CODE 0 text15 dist/default/production\TEST_UART.X.production.o
+_EUSART_ErrorHandler 5D 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
-EUSART_SetTxInterruptHandler@interruptHandler 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
+EUSART_SetTxInterruptHandler@interruptHandler 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits 11 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Lend_init 42 0 CODE 0 end_init -
-_EUSART_DefaultErrorHandler 530 0 CODE 0 text23 dist/default/production\TEST_UART.X.production.o
+_EUSART_DefaultErrorHandler 52C 0 CODE 0 text23 dist/default/production\TEST_UART.X.production.o
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_EUSART_SetFramingErrorHandler 4F0 0 CODE 0 text12 dist/default/production\TEST_UART.X.production.o
-_EUSART_SetOverrunErrorHandler 4E4 0 CODE 0 text11 dist/default/production\TEST_UART.X.production.o
-end_of_initialization 7A 0 CODE 0 cinit dist/default/production\TEST_UART.X.production.o
+_EUSART_SetFramingErrorHandler 4F8 0 CODE 0 text9 dist/default/production\TEST_UART.X.production.o
+_EUSART_SetOverrunErrorHandler 4EC 0 CODE 0 text8 dist/default/production\TEST_UART.X.production.o
+end_of_initialization 6C 0 CODE 0 cinit dist/default/production\TEST_UART.X.production.o
 __Hintentry 42 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Lstrings 0 0 ABS 0 strings -
-__end_of_ReceivedMessage 234 0 CODE 0 text20 dist/default/production\TEST_UART.X.production.o
+__end_of_ReceivedMessage 1CC 0 CODE 0 text19 dist/default/production\TEST_UART.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
-_ResponseBuffer 2170 0 ABS 1 - dist/default/production\TEST_UART.X.production.o
+_ResponseBuffer 3D 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__size_of_strcpy 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__ptext1 28E 0 CODE 0 text1 dist/default/production\TEST_UART.X.production.o
-__ptext2 3D2 0 CODE 0 text2 dist/default/production\TEST_UART.X.production.o
-__ptext3 234 0 CODE 0 text3 dist/default/production\TEST_UART.X.production.o
-__ptext4 2D8 0 CODE 0 text4 dist/default/production\TEST_UART.X.production.o
-__ptext5 4B4 0 CODE 0 text5 dist/default/production\TEST_UART.X.production.o
-__ptext6 520 0 CODE 0 text6 dist/default/production\TEST_UART.X.production.o
-__ptext7 39E 0 CODE 0 text7 dist/default/production\TEST_UART.X.production.o
-__ptext8 4CC 0 CODE 0 text8 dist/default/production\TEST_UART.X.production.o
-__ptext9 82 0 CODE 0 text9 dist/default/production\TEST_UART.X.production.o
-_eusartTxBufferRemaining 52 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__ptext1 3B2 0 CODE 0 text1 dist/default/production\TEST_UART.X.production.o
+__ptext2 4A0 0 CODE 0 text2 dist/default/production\TEST_UART.X.production.o
+__ptext3 51C 0 CODE 0 text3 dist/default/production\TEST_UART.X.production.o
+__ptext4 37E 0 CODE 0 text4 dist/default/production\TEST_UART.X.production.o
+__ptext5 4D4 0 CODE 0 text5 dist/default/production\TEST_UART.X.production.o
+__ptext6 74 0 CODE 0 text6 dist/default/production\TEST_UART.X.production.o
+__ptext7 4E0 0 CODE 0 text7 dist/default/production\TEST_UART.X.production.o
+__ptext8 4EC 0 CODE 0 text8 dist/default/production\TEST_UART.X.production.o
+__ptext9 4F8 0 CODE 0 text9 dist/default/production\TEST_UART.X.production.o
+_eusartTxBufferRemaining 67 0 BANK0 1 nvBANK0 dist/default/production\TEST_UART.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __size_of_EUSART_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-blockingWait@limit 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
+blockingWait@limit 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
 __Hstringtext1 0 0 ABS 0 stringtext1 -
+__Hstringtext2 0 0 ABS 0 stringtext2 -
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+__Hstringtext4 0 0 ABS 0 stringtext4 -
 __CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _eusartRxStatusBuffer 20 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_SetTxInterruptHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-EUSART_Write@txData 3C 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-strcpy@src 3E 0 BANK0 1 cstackBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of__initialization 7A 0 CODE 0 cinit dist/default/production\TEST_UART.X.production.o
+EUSART_Write@txData 74 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+__end_of__initialization 6C 0 CODE 0 cinit dist/default/production\TEST_UART.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__end_of_EUSART_SetTxInterruptHandler 4E4 0 CODE 0 text10 dist/default/production\TEST_UART.X.production.o
-_eusartRxCount 70 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_SetTxInterruptHandler 4EC 0 CODE 0 text7 dist/default/production\TEST_UART.X.production.o
+_eusartRxCount 3B 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_Transmit_ISR 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __size_of_EUSART_RxDataHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_ReceivedMessage 1D8 0 CODE 0 text20 dist/default/production\TEST_UART.X.production.o
+_ReceivedMessage 164 0 CODE 0 text19 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__pcstackCOMMON 75 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\TEST_UART.X.production.o
 _TXSTAbits 19E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Hend_init 46 0 CODE 0 end_init -
-__end_of_main 174 0 CODE 0 maintext dist/default/production\TEST_UART.X.production.o
-__end_of_uart 458 0 STRCODE 0 stringtext1 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_RxDataHandler 430 0 CODE 0 text24 dist/default/production\TEST_UART.X.production.o
+__end_of_main 27C 0 CODE 0 maintext dist/default/production\TEST_UART.X.production.o
+__end_of_uart 43A 0 STRCODE 0 stringtext1 dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_RxDataHandler 412 0 CODE 0 text24 dist/default/production\TEST_UART.X.production.o
 _RCREG 199 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _RCSTA 19D 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
@@ -739,27 +744,28 @@ _TXSTA 19E 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_eusartRxLastError 3B 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
-_WDT_Initialize 520 0 CODE 0 text6 dist/default/production\TEST_UART.X.production.o
+_eusartRxLastError 3A 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
+_WDT_Initialize 51C 0 CODE 0 text3 dist/default/production\TEST_UART.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\TEST_UART.X.production.o
-__end_of_ReadyReceiveBuffer 47E 0 CODE 0 text14 dist/default/production\TEST_UART.X.production.o
+__end_of_ReadyReceiveBuffer 4A0 0 CODE 0 text11 dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-__end_of_OSCILLATOR_Initialize 4D8 0 CODE 0 text8 dist/default/production\TEST_UART.X.production.o
+__end_of_OSCILLATOR_Initialize 4E0 0 CODE 0 text5 dist/default/production\TEST_UART.X.production.o
 __initialization 46 0 CODE 0 cinit dist/default/production\TEST_UART.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
-_EUSART_Transmit_ISR 364 0 CODE 0 text26 dist/default/production\TEST_UART.X.production.o
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\TEST_UART.X.production.o
+_EUSART_Transmit_ISR 344 0 CODE 0 text26 dist/default/production\TEST_UART.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_eusartRxHead 72 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
-_eusartRxTail 71 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
+_eusartRxHead 78 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
+_eusartRxTail 77 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_Receive_ISR 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 __size_of_EUSART_SetRxInterruptHandler 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
 _EUSART_is_tx_done 0 0 ABS 0 - dist/default/production\TEST_UART.X.production.o
-_eusartTxHead 74 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
-_eusartTxTail 73 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
-_ResponseIndex 3A 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
-__end_of_EUSART_SetRxInterruptHandler 514 0 CODE 0 text16 dist/default/production\TEST_UART.X.production.o
-_OSCILLATOR_Initialize 4CC 0 CODE 0 text8 dist/default/production\TEST_UART.X.production.o
+_eusartTxHead 79 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
+_eusartTxTail 3C 0 BANK0 1 bssBANK0 dist/default/production\TEST_UART.X.production.o
+_ResponseIndex 76 0 COMMON 1 bssCOMMON dist/default/production\TEST_UART.X.production.o
+__end_of_EUSART_SetRxInterruptHandler 51C 0 CODE 0 text15 dist/default/production\TEST_UART.X.production.o
+_OSCILLATOR_Initialize 4D4 0 CODE 0 text5 dist/default/production\TEST_UART.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -776,13 +782,6 @@ _OSCILLATOR_Initialize 4CC 0 CODE 0 text8 dist/default/production\TEST_UART.X.pr
 # otherwise name will be "-".  The <space> number is in decimal.
 # <address> and <size> are in byte units as unqaulified hexadecimal
 %DABS
-_ReadStorage 1 20F0 0
-_ResponseBuffer 1 2170 0
-- 1 320 10
-- 1 2A0 50
-- 1 250 20
-- 1 220 30
-- 1 1A0 50
 - 1 7E 2
 # %SEGMENTS Section
 # This sections enumerates the segments of the program.  Each segment
@@ -792,10 +791,11 @@ _ResponseBuffer 1 2170 0
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text14 0 22C 458 70 2
-stringtext1 0 218 430 14 2
-intentry 0 4 8 214 2
+text11 0 240 480 5C 2
+cstackCOMMON 1 70 70 A 1
+stringtext1 0 209 412 37 2
+intentry 0 4 8 205 2
 reset_vec 0 0 0 2 2
-bssBANK0 1 20 20 33 1
-bssCOMMON 1 70 70 A 1
+bssBANK0 1 20 20 4E 1
+bssBANK1 1 A0 A0 20 1
 config 0 8007 1000E 2 2

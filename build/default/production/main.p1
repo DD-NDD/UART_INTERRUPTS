@@ -21,16 +21,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40 ./uart.h
 [; ;./uart.h: 40: void INIT_SMART_LIGHT (void);
 [v _INIT_SMART_LIGHT `(v ~T0 @X0 0 ef ]
-"38
-[; ;./uart.h: 38: char* GetResponse(void);
-[v _GetResponse `(*uc ~T0 @X0 0 ef ]
 "36
 [; ;./uart.h: 36: void blockingWait(uint16_t);
 [v _blockingWait `(v ~T0 @X0 0 ef1`us ]
-"33 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 33: char *strcpy (char *restrict, const char *restrict);
-[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
-"39 ./uart.h
+"38
+[; ;./uart.h: 38: char* GetResponse(void);
+[v _GetResponse `(*uc ~T0 @X0 0 ef ]
+"39
 [; ;./uart.h: 39: void SendString(const char*);
 [v _SendString `(v ~T0 @X0 0 ef1`*Cuc ]
 "37
@@ -610,16 +607,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "34
-[; ;./uart.h: 34: char ResponseBuffer [128] = {0};
-[v _ResponseBuffer `uc ~T0 @X0 -> 128 `i e ]
+[; ;./uart.h: 34: char ResponseBuffer [32] = {0};
+[v _ResponseBuffer `uc ~T0 @X0 -> 32 `i e ]
 [i _ResponseBuffer
 :U ..
 -> -> 0 `i `uc
 ..
 ]
 "35
-[; ;./uart.h: 35: char ReadStorage [128] = {0};
-[v _ReadStorage `uc ~T0 @X0 -> 128 `i e ]
+[; ;./uart.h: 35: char ReadStorage [32] = {0};
+[v _ReadStorage `uc ~T0 @X0 -> 32 `i e ]
 [i _ReadStorage
 :U ..
 -> -> 0 `i `uc
@@ -628,51 +625,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 main.c
 [; ;main.c: 4: char* rxData;
 [v _rxData `*uc ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
 "5
-[; ;main.c: 5: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;main.c: 5: char* lastRxData;
+[v _lastRxData `*uc ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
 "6
-[; ;main.c: 6: {
+[; ;main.c: 6: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"7
+[; ;main.c: 7: {
 {
 [e :U _main ]
 [f ]
-"7
-[; ;main.c: 7:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "8
-[; ;main.c: 8:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 8:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "9
-[; ;main.c: 9:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 9:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "10
-[; ;main.c: 10:     INIT_SMART_LIGHT ();
-[e ( _INIT_SMART_LIGHT ..  ]
+[; ;main.c: 10:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "11
-[; ;main.c: 11:     while (1)
-[e :U 460 ]
+[; ;main.c: 11:     INIT_SMART_LIGHT ();
+[e ( _INIT_SMART_LIGHT ..  ]
 "12
-[; ;main.c: 12:     {
-{
+[; ;main.c: 12:     while (1)
+[e :U 460 ]
 "13
-[; ;main.c: 13:         rxData = GetResponse();
-[e = _rxData ( _GetResponse ..  ]
+[; ;main.c: 13:     {
+{
 "14
-[; ;main.c: 14:         if(*rxData != ((void*)0))
-[e $ ! != -> -> *U _rxData `i `*v -> -> 0 `i `*v 462  ]
+[; ;main.c: 14:         if(ResponseIndex != 0)
+[e $ ! != -> _ResponseIndex `i -> 0 `i 462  ]
 "15
 [; ;main.c: 15:         {
 {
 "16
-[; ;main.c: 16:             blockingWait(1);
-[e ( _blockingWait (1 -> -> 1 `i `us ]
+[; ;main.c: 16:             blockingWait(2);
+[e ( _blockingWait (1 -> -> 2 `i `us ]
 "17
-[; ;main.c: 17:             strcpy(ReadStorage, rxData);
-[e ( _strcpy (2 , &U _ReadStorage -> _rxData `*Cuc ]
+[; ;main.c: 17:             rxData = GetResponse();
+[e = _rxData ( _GetResponse ..  ]
 "18
-[; ;main.c: 18:             SendString(ReadStorage);
-[e ( _SendString (1 -> &U _ReadStorage `*Cuc ]
+[; ;main.c: 18:             SendString(rxData);
+[e ( _SendString (1 -> _rxData `*Cuc ]
 "19
 [; ;main.c: 19:             ReadyReceiveBuffer();
 [e ( _ReadyReceiveBuffer ..  ]

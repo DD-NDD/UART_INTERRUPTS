@@ -19,7 +19,7 @@
 //*********************************************************
 //          Local Defines/Variables used for Example
 //*********************************************************
-#define responseBufferSize  128
+#define responseBufferSize  32
 uint8_t ResponseIndex = 0;
 
 

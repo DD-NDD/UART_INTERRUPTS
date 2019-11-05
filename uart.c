@@ -6,9 +6,10 @@ const uart_functions_t uart[] = {
 };
 void SendString(const char* command)
 {
-    while (*command != '\0')
+    int i = ResponseIndex;
+    while (ResponseIndex-- != 0)
         uart[SML].Write(*command++);
-    //uart[SML].Write('\r');
+    uart[SML].Write('\r');
     uart[SML].Write('\n');
 }
 //*********************************************************
@@ -16,25 +17,18 @@ void SendString(const char* command)
 //*********************************************************
 void INIT_SMART_LIGHT (void)                           // Call After System Init; Above while(1) Loop in Main.c
 {
-//    char* exampleRead;
     uart[SML].SetRxISR(ReceivedMessage); 
-//    blockingWait(2);
-//    blockingWait(400);                          // Wait for Module Information Response             
-//    exampleRead = GetResponse();                // Read Response
-//    strcpy(ReadStorage, exampleRead);            // Store for use/reference
-//    ReadyReceiveBuffer();                       // Prepare for next message
-//    SendString("SYS FACTORY RESET");               // Send "sys" Command: "factoryRESET"  
-//    SendString("SMART LIGHT INIT");
-//    blockingWait(1000);                          // Wait
-//    exampleRead = GetResponse();                // Read Version String from Buffer
-//    strcpy(ReadStorage, exampleRead);            // Store for use/reference
-//    SendString(ReadStorage);
+    SendString("SYS FACTORY RESET");               // Send "sys" Command: "factoryRESET"  
+    SendString("SMART LIGHT INIT");
 }
 void ReceivedMessage(void)       // Call in ISR EUSART RX after EUSART_Receive_ISR() 
 {
     uart[SML].RxDefaultISR();
+    while (!uart[SML].DataReady()) {
+        NOP();
+    }
     uint8_t readByte = uart[SML].Read();
-    if ( (readByte != '\0') && (ResponseIndex < responseBufferSize) )
+    if ((ResponseIndex < responseBufferSize) )
         ResponseBuffer[ResponseIndex++] = readByte;
 }
 //*********************************************************
