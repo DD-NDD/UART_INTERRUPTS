@@ -19,7 +19,7 @@
 //*********************************************************
 //          Local Defines/Variables used for Example
 //*********************************************************
-#define responseBufferSize  32
+#define responseBufferSize  64
 uint8_t ResponseIndex = 0;
 
 
@@ -37,6 +37,7 @@ void blockingWait(uint16_t);
 void ReadyReceiveBuffer(void);
 char* GetResponse(void);
 void SendString(const char*);
+void SML_SendString(const char*,int len);
 void INIT_SMART_LIGHT (void);
 void ReceivedMessage(void);
 #endif	// _UART_H

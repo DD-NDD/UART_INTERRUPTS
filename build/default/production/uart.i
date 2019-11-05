@@ -4777,12 +4777,13 @@ typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); _Bool (*T
 
 extern const uart_functions_t uart[];
 
-char ResponseBuffer [32] = {0};
-char ReadStorage [32] = {0};
+char ResponseBuffer [64] = {0};
+char ReadStorage [64] = {0};
 void blockingWait(uint16_t);
 void ReadyReceiveBuffer(void);
 char* GetResponse(void);
 void SendString(const char*);
+void SML_SendString(const char*,int len);
 void INIT_SMART_LIGHT (void);
 void ReceivedMessage(void);
 # 1 "uart.c" 2
@@ -4873,8 +4874,14 @@ const uart_functions_t uart[] = {
 };
 void SendString(const char* command)
 {
-    int i = ResponseIndex;
     while (ResponseIndex-- != 0)
+        uart[SML].Write(*command++);
+
+
+}
+void SML_SendString(const char* command,int len)
+{
+    while (len-- !=0)
         uart[SML].Write(*command++);
     uart[SML].Write('\r');
     uart[SML].Write('\n');
@@ -4895,7 +4902,7 @@ void ReceivedMessage(void)
         __nop();
     }
     uint8_t readByte = uart[SML].Read();
-    if ((ResponseIndex < 32) )
+    if ((ResponseIndex < 64) )
         ResponseBuffer[ResponseIndex++] = readByte;
 }
 
@@ -4904,7 +4911,7 @@ void ReceivedMessage(void)
 void ReadyReceiveBuffer (void)
 {
     ResponseIndex = 0;
-    for (uint8_t position = 0; position < 32; position++)
+    for (uint8_t position = 0; position < 64; position++)
         ResponseBuffer[position] = 0;
 }
 char* GetResponse(void)
@@ -4914,5 +4921,5 @@ char* GetResponse(void)
 void blockingWait (uint16_t limit)
 {
     for (uint16_t counter = 0; counter < limit; counter++)
-  _delay((unsigned long)((15)*(32000000/4000.0)));
+  _delay((unsigned long)((10)*(32000000/4000.0)));
 }

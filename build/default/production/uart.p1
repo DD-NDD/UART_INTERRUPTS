@@ -47,12 +47,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "117
 [; ;./mcc_generated_files/eusart.h: 117: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
-"11 uart.c
-[; ;uart.c: 11:         uart[SML].Write(*command++);
+"10 uart.c
+[; ;uart.c: 10:         uart[SML].Write(*command++);
 [c E2891 0 .. ]
 [n E2891 . SML  ]
-"41 ./uart.h
-[; ;./uart.h: 41: void ReceivedMessage(void);
+"42 ./uart.h
+[; ;./uart.h: 42: void ReceivedMessage(void);
 [v _ReceivedMessage `(v ~T0 @X0 0 ef ]
 "31 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
@@ -635,16 +635,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "34
-[; ;./uart.h: 34: char ResponseBuffer [32] = {0};
-[v _ResponseBuffer `uc ~T0 @X0 -> 32 `i e ]
+[; ;./uart.h: 34: char ResponseBuffer [64] = {0};
+[v _ResponseBuffer `uc ~T0 @X0 -> 64 `i e ]
 [i _ResponseBuffer
 :U ..
 -> -> 0 `i `uc
 ..
 ]
 "35
-[; ;./uart.h: 35: char ReadStorage [32] = {0};
-[v _ReadStorage `uc ~T0 @X0 -> 32 `i e ]
+[; ;./uart.h: 35: char ReadStorage [64] = {0};
+[v _ReadStorage `uc ~T0 @X0 -> 64 `i e ]
 [i _ReadStorage
 :U ..
 -> -> 0 `i `uc
@@ -683,171 +683,197 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;uart.c: 8: {
 [f ]
 "9
-[; ;uart.c: 9:     int i = ResponseIndex;
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> _ResponseIndex `i ]
-"10
-[; ;uart.c: 10:     while (ResponseIndex-- != 0)
+[; ;uart.c: 9:     while (ResponseIndex-- != 0)
 [e $U 459  ]
 [e :U 460 ]
-"11
-[; ;uart.c: 11:         uart[SML].Write(*command++);
+"10
+[; ;uart.c: 10:         uart[SML].Write(*command++);
 [e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> *U ++ _command * -> -> 1 `i `x -> -> # *U _command `i `x `uc ]
 [e :U 459 ]
-"10
-[; ;uart.c: 10:     while (ResponseIndex-- != 0)
+"9
+[; ;uart.c: 9:     while (ResponseIndex-- != 0)
 [e $ != -> -- _ResponseIndex -> -> 1 `i `uc `i -> 0 `i 460  ]
 [e :U 461 ]
-"12
-[; ;uart.c: 12:     uart[SML].Write('\r');
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> -> 13 `ui `uc ]
 "13
-[; ;uart.c: 13:     uart[SML].Write('\n');
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> -> 10 `ui `uc ]
-"14
-[; ;uart.c: 14: }
+[; ;uart.c: 13: }
 [e :UE 458 ]
 }
-"18
-[; ;uart.c: 18: void INIT_SMART_LIGHT (void)
-[v _INIT_SMART_LIGHT `(v ~T0 @X0 1 ef ]
-"19
-[; ;uart.c: 19: {
+"14
+[; ;uart.c: 14: void SML_SendString(const char* command,int len)
+[v _SML_SendString `(v ~T0 @X0 1 ef2`*Cuc`i ]
+"15
+[; ;uart.c: 15: {
 {
-[e :U _INIT_SMART_LIGHT ]
+[e :U _SML_SendString ]
+"14
+[; ;uart.c: 14: void SML_SendString(const char* command,int len)
+[v _command `*Cuc ~T0 @X0 1 r1 ]
+[v _len `i ~T0 @X0 1 r2 ]
+"15
+[; ;uart.c: 15: {
 [f ]
+"16
+[; ;uart.c: 16:     while (len-- !=0)
+[e $U 463  ]
+[e :U 464 ]
+"17
+[; ;uart.c: 17:         uart[SML].Write(*command++);
+[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> *U ++ _command * -> -> 1 `i `x -> -> # *U _command `i `x `uc ]
+[e :U 463 ]
+"16
+[; ;uart.c: 16:     while (len-- !=0)
+[e $ != -- _len -> 1 `i -> 0 `i 464  ]
+[e :U 465 ]
+"18
+[; ;uart.c: 18:     uart[SML].Write('\r');
+[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> -> 13 `ui `uc ]
+"19
+[; ;uart.c: 19:     uart[SML].Write('\n');
+[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 1 (1 -> -> 10 `ui `uc ]
 "20
-[; ;uart.c: 20:     uart[SML].SetRxISR(ReceivedMessage);
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 6 (1 &U _ReceivedMessage ]
-"21
-[; ;uart.c: 21:     SendString("SYS FACTORY RESET");
-[e ( _SendString (1 :s 1C ]
-"22
-[; ;uart.c: 22:     SendString("SMART LIGHT INIT");
-[e ( _SendString (1 :s 2C ]
-"23
-[; ;uart.c: 23: }
+[; ;uart.c: 20: }
 [e :UE 462 ]
 }
 "24
-[; ;uart.c: 24: void ReceivedMessage(void)
-[v _ReceivedMessage `(v ~T0 @X0 1 ef ]
+[; ;uart.c: 24: void INIT_SMART_LIGHT (void)
+[v _INIT_SMART_LIGHT `(v ~T0 @X0 1 ef ]
 "25
 [; ;uart.c: 25: {
 {
-[e :U _ReceivedMessage ]
+[e :U _INIT_SMART_LIGHT ]
 [f ]
 "26
-[; ;uart.c: 26:     uart[SML].RxDefaultISR();
-[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 5 ..  ]
+[; ;uart.c: 26:     uart[SML].SetRxISR(ReceivedMessage);
+[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 6 (1 &U _ReceivedMessage ]
 "27
-[; ;uart.c: 27:     while (!uart[SML].DataReady()) {
-[e $U 464  ]
-[e :U 465 ]
-{
+[; ;uart.c: 27:     SendString("SYS FACTORY RESET");
+[e ( _SendString (1 :s 1C ]
 "28
-[; ;uart.c: 28:         __nop();
-[e ( ___nop ..  ]
+[; ;uart.c: 28:     SendString("SMART LIGHT INIT");
+[e ( _SendString (1 :s 2C ]
 "29
-[; ;uart.c: 29:     }
+[; ;uart.c: 29: }
+[e :UE 466 ]
 }
-[e :U 464 ]
-"27
-[; ;uart.c: 27:     while (!uart[SML].DataReady()) {
-[e $ ! != -> ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 3 ..  `i -> 0 `i 465  ]
-[e :U 466 ]
 "30
-[; ;uart.c: 30:     uint8_t readByte = uart[SML].Read();
+[; ;uart.c: 30: void ReceivedMessage(void)
+[v _ReceivedMessage `(v ~T0 @X0 1 ef ]
+"31
+[; ;uart.c: 31: {
+{
+[e :U _ReceivedMessage ]
+[f ]
+"32
+[; ;uart.c: 32:     uart[SML].RxDefaultISR();
+[e ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 5 ..  ]
+"33
+[; ;uart.c: 33:     while (!uart[SML].DataReady()) {
+[e $U 468  ]
+[e :U 469 ]
+{
+"34
+[; ;uart.c: 34:         __nop();
+[e ( ___nop ..  ]
+"35
+[; ;uart.c: 35:     }
+}
+[e :U 468 ]
+"33
+[; ;uart.c: 33:     while (!uart[SML].DataReady()) {
+[e $ ! != -> ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 3 ..  `i -> 0 `i 469  ]
+[e :U 470 ]
+"36
+[; ;uart.c: 36:     uint8_t readByte = uart[SML].Read();
 [v _readByte `uc ~T0 @X0 1 a ]
 [e = _readByte ( *U . *U + &U _uart * -> . `E2891 0 `ux -> -> # *U &U _uart `ui `ux 0 ..  ]
-"31
-[; ;uart.c: 31:     if ((ResponseIndex < 32) )
-[e $ ! < -> _ResponseIndex `i -> 32 `i 467  ]
-"32
-[; ;uart.c: 32:         ResponseBuffer[ResponseIndex++] = readByte;
-[e = *U + &U _ResponseBuffer * -> ++ _ResponseIndex -> -> 1 `i `uc `ux -> -> # *U &U _ResponseBuffer `ui `ux -> _readByte `uc ]
-[e :U 467 ]
-"33
-[; ;uart.c: 33: }
-[e :UE 463 ]
-}
 "37
-[; ;uart.c: 37: void ReadyReceiveBuffer (void)
-[v _ReadyReceiveBuffer `(v ~T0 @X0 1 ef ]
+[; ;uart.c: 37:     if ((ResponseIndex < 64) )
+[e $ ! < -> _ResponseIndex `i -> 64 `i 471  ]
 "38
-[; ;uart.c: 38: {
-{
-[e :U _ReadyReceiveBuffer ]
-[f ]
+[; ;uart.c: 38:         ResponseBuffer[ResponseIndex++] = readByte;
+[e = *U + &U _ResponseBuffer * -> ++ _ResponseIndex -> -> 1 `i `uc `ux -> -> # *U &U _ResponseBuffer `ui `ux -> _readByte `uc ]
+[e :U 471 ]
 "39
-[; ;uart.c: 39:     ResponseIndex = 0;
-[e = _ResponseIndex -> -> 0 `i `uc ]
-"40
-[; ;uart.c: 40:     for (uint8_t position = 0; position < 32; position++)
-{
-[v _position `uc ~T0 @X0 1 a ]
-[e = _position -> -> 0 `i `uc ]
-[e $ < -> _position `i -> 32 `i 469  ]
-[e $U 470  ]
-[e :U 469 ]
-"41
-[; ;uart.c: 41:         ResponseBuffer[position] = 0;
-[e = *U + &U _ResponseBuffer * -> _position `ux -> -> # *U &U _ResponseBuffer `ui `ux -> -> 0 `i `uc ]
-[e ++ _position -> -> 1 `i `uc ]
-[e $ < -> _position `i -> 32 `i 469  ]
-[e :U 470 ]
-}
-"42
-[; ;uart.c: 42: }
-[e :UE 468 ]
+[; ;uart.c: 39: }
+[e :UE 467 ]
 }
 "43
-[; ;uart.c: 43: char* GetResponse(void)
-[v _GetResponse `(*uc ~T0 @X0 1 ef ]
+[; ;uart.c: 43: void ReadyReceiveBuffer (void)
+[v _ReadyReceiveBuffer `(v ~T0 @X0 1 ef ]
 "44
 [; ;uart.c: 44: {
 {
-[e :U _GetResponse ]
+[e :U _ReadyReceiveBuffer ]
 [f ]
 "45
-[; ;uart.c: 45:     return ResponseBuffer;
-[e ) &U _ResponseBuffer ]
-[e $UE 472  ]
+[; ;uart.c: 45:     ResponseIndex = 0;
+[e = _ResponseIndex -> -> 0 `i `uc ]
 "46
-[; ;uart.c: 46: }
+[; ;uart.c: 46:     for (uint8_t position = 0; position < 64; position++)
+{
+[v _position `uc ~T0 @X0 1 a ]
+[e = _position -> -> 0 `i `uc ]
+[e $ < -> _position `i -> 64 `i 473  ]
+[e $U 474  ]
+[e :U 473 ]
+"47
+[; ;uart.c: 47:         ResponseBuffer[position] = 0;
+[e = *U + &U _ResponseBuffer * -> _position `ux -> -> # *U &U _ResponseBuffer `ui `ux -> -> 0 `i `uc ]
+[e ++ _position -> -> 1 `i `uc ]
+[e $ < -> _position `i -> 64 `i 473  ]
+[e :U 474 ]
+}
+"48
+[; ;uart.c: 48: }
 [e :UE 472 ]
 }
-"47
-[; ;uart.c: 47: void blockingWait (uint16_t limit)
+"49
+[; ;uart.c: 49: char* GetResponse(void)
+[v _GetResponse `(*uc ~T0 @X0 1 ef ]
+"50
+[; ;uart.c: 50: {
+{
+[e :U _GetResponse ]
+[f ]
+"51
+[; ;uart.c: 51:     return ResponseBuffer;
+[e ) &U _ResponseBuffer ]
+[e $UE 476  ]
+"52
+[; ;uart.c: 52: }
+[e :UE 476 ]
+}
+"53
+[; ;uart.c: 53: void blockingWait (uint16_t limit)
 [v _blockingWait `(v ~T0 @X0 1 ef1`us ]
-"48
-[; ;uart.c: 48: {
+"54
+[; ;uart.c: 54: {
 {
 [e :U _blockingWait ]
-"47
-[; ;uart.c: 47: void blockingWait (uint16_t limit)
+"53
+[; ;uart.c: 53: void blockingWait (uint16_t limit)
 [v _limit `us ~T0 @X0 1 r1 ]
-"48
-[; ;uart.c: 48: {
+"54
+[; ;uart.c: 54: {
 [f ]
-"49
-[; ;uart.c: 49:     for (uint16_t counter = 0; counter < limit; counter++)
+"55
+[; ;uart.c: 55:     for (uint16_t counter = 0; counter < limit; counter++)
 {
 [v _counter `us ~T0 @X0 1 a ]
 [e = _counter -> -> 0 `i `us ]
-[e $U 477  ]
-[e :U 474 ]
-"50
-[; ;uart.c: 50:   _delay((unsigned long)((15)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[e $U 481  ]
+[e :U 478 ]
+"56
+[; ;uart.c: 56:   _delay((unsigned long)((10)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 [e ++ _counter -> -> 1 `i `us ]
-[e :U 477 ]
-[e $ < -> _counter `ui -> _limit `ui 474  ]
-[e :U 475 ]
+[e :U 481 ]
+[e $ < -> _counter `ui -> _limit `ui 478  ]
+[e :U 479 ]
 }
-"51
-[; ;uart.c: 51: }
-[e :UE 473 ]
+"57
+[; ;uart.c: 57: }
+[e :UE 477 ]
 }
 [a 2C 83 77 65 82 84 32 76 73 71 72 84 32 73 78 73 84 0 ]
 [a 1C 83 89 83 32 70 65 67 84 79 82 89 32 82 69 83 69 84 0 ]

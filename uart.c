@@ -11,6 +11,13 @@ void SendString(const char* command)
     //uart[SML].Write('\r');
     //uart[SML].Write('\n');
 }
+void SML_SendString(const char* command,int len)
+{
+    while (len-- !=0)
+        uart[SML].Write(*command++);
+    uart[SML].Write('\r');
+    uart[SML].Write('\n');
+}
 //*********************************************************
 //          Accessible Example Functions
 //*********************************************************

@@ -18,21 +18,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"40 ./uart.h
-[; ;./uart.h: 40: void INIT_SMART_LIGHT (void);
+"41 ./uart.h
+[; ;./uart.h: 41: void INIT_SMART_LIGHT (void);
 [v _INIT_SMART_LIGHT `(v ~T0 @X0 0 ef ]
+"37
+[; ;./uart.h: 37: void ReadyReceiveBuffer(void);
+[v _ReadyReceiveBuffer `(v ~T0 @X0 0 ef ]
 "36
 [; ;./uart.h: 36: void blockingWait(uint16_t);
 [v _blockingWait `(v ~T0 @X0 0 ef1`us ]
 "38
 [; ;./uart.h: 38: char* GetResponse(void);
 [v _GetResponse `(*uc ~T0 @X0 0 ef ]
-"39
-[; ;./uart.h: 39: void SendString(const char*);
-[v _SendString `(v ~T0 @X0 0 ef1`*Cuc ]
-"37
-[; ;./uart.h: 37: void ReadyReceiveBuffer(void);
-[v _ReadyReceiveBuffer `(v ~T0 @X0 0 ef ]
+"33 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 33: char *strcpy (char *restrict, const char *restrict);
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"51
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 51: char *strstr (const char *, const char *);
+[v _strstr `(*uc ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"40 ./uart.h
+[; ;./uart.h: 40: void SML_SendString(const char*,int len);
+[v _SML_SendString `(v ~T0 @X0 0 ef2`*Cuc`i ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -607,83 +613,169 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "34
-[; ;./uart.h: 34: char ResponseBuffer [32] = {0};
-[v _ResponseBuffer `uc ~T0 @X0 -> 32 `i e ]
+[; ;./uart.h: 34: char ResponseBuffer [64] = {0};
+[v _ResponseBuffer `uc ~T0 @X0 -> 64 `i e ]
 [i _ResponseBuffer
 :U ..
 -> -> 0 `i `uc
 ..
 ]
 "35
-[; ;./uart.h: 35: char ReadStorage [32] = {0};
-[v _ReadStorage `uc ~T0 @X0 -> 32 `i e ]
+[; ;./uart.h: 35: char ReadStorage [64] = {0};
+[v _ReadStorage `uc ~T0 @X0 -> 64 `i e ]
 [i _ReadStorage
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"4 main.c
-[; ;main.c: 4: char* rxData;
+"10 main.c
+[; ;main.c: 10: char RESET[6] = {0xFE,0x01,0x41,0x00,0x00,0x40};
+[v _RESET `uc ~T0 @X0 -> 6 `i e ]
+[i _RESET
+:U ..
+-> -> 254 `i `uc
+-> -> 1 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 64 `i `uc
+..
+]
+"11
+[; ;main.c: 11: char KEY5[7] = {0xFE,0x02,0x27,0x07,0x10,0x01,0x33};
+[v _KEY5 `uc ~T0 @X0 -> 7 `i e ]
+[i _KEY5
+:U ..
+-> -> 254 `i `uc
+-> -> 2 `i `uc
+-> -> 39 `i `uc
+-> -> 7 `i `uc
+-> -> 16 `i `uc
+-> -> 1 `i `uc
+-> -> 51 `i `uc
+..
+]
+"12
+[; ;main.c: 12: char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
+[v _KEY3 `uc ~T0 @X0 -> 7 `i e ]
+[i _KEY3
+:U ..
+-> -> 254 `i `uc
+-> -> 2 `i `uc
+-> -> 39 `i `uc
+-> -> 7 `i `uc
+-> -> 4 `i `uc
+-> -> 1 `i `uc
+-> -> 39 `i `uc
+..
+]
+"13
+[; ;main.c: 13: char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
+[v _LVL `uc ~T0 @X0 -> 5 `i e ]
+[i _LVL
+:U ..
+-> -> 76 `i `uc
+-> -> 69 `i `uc
+-> -> 86 `i `uc
+-> -> 69 `i `uc
+-> -> 76 `i `uc
+..
+]
+"14
+[; ;main.c: 14: char* rxData;
 [v _rxData `*uc ~T0 @X0 1 e ]
-"5
-[; ;main.c: 5: char* lastRxData;
-[v _lastRxData `*uc ~T0 @X0 1 e ]
+"15
+[; ;main.c: 15: char Storage [64] = {0};
+[v _Storage `uc ~T0 @X0 -> 64 `i e ]
+[i _Storage
+:U ..
+-> -> 0 `i `uc
+..
+]
+"16
+[; ;main.c: 16: char Storage2 [64] = {0};
+[v _Storage2 `uc ~T0 @X0 -> 64 `i e ]
+[i _Storage2
+:U ..
+-> -> 0 `i `uc
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"6
-[; ;main.c: 6: void main(void)
+"17
+[; ;main.c: 17: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"7
-[; ;main.c: 7: {
+"18
+[; ;main.c: 18: {
 {
 [e :U _main ]
 [f ]
-"8
-[; ;main.c: 8:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"9
-[; ;main.c: 9:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"10
-[; ;main.c: 10:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"11
-[; ;main.c: 11:     INIT_SMART_LIGHT ();
-[e ( _INIT_SMART_LIGHT ..  ]
-"12
-[; ;main.c: 12:     while (1)
-[e :U 460 ]
-"13
-[; ;main.c: 13:     {
-{
-"14
-[; ;main.c: 14:         if(ResponseIndex != 0)
-[e $ ! != -> _ResponseIndex `i -> 0 `i 462  ]
-"15
-[; ;main.c: 15:         {
-{
-"16
-[; ;main.c: 16:             blockingWait(2);
-[e ( _blockingWait (1 -> -> 2 `i `us ]
-"17
-[; ;main.c: 17:             rxData = GetResponse();
-[e = _rxData ( _GetResponse ..  ]
-"18
-[; ;main.c: 18:             SendString(rxData);
-[e ( _SendString (1 -> _rxData `*Cuc ]
 "19
-[; ;main.c: 19:             ReadyReceiveBuffer();
-[e ( _ReadyReceiveBuffer ..  ]
+[; ;main.c: 19:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "20
-[; ;main.c: 20:         }
+[; ;main.c: 20:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"21
+[; ;main.c: 21:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"22
+[; ;main.c: 22:     INIT_SMART_LIGHT ();
+[e ( _INIT_SMART_LIGHT ..  ]
+"23
+[; ;main.c: 23:     ReadyReceiveBuffer();
+[e ( _ReadyReceiveBuffer ..  ]
+"24
+[; ;main.c: 24:     int test = 0;
+[v _test `i ~T0 @X0 1 a ]
+[e = _test -> 0 `i ]
+"25
+[; ;main.c: 25:     while (1)
+[e :U 460 ]
+"26
+[; ;main.c: 26:     {
+{
+"27
+[; ;main.c: 27:         if(ResponseIndex != 0)
+[e $ ! != -> _ResponseIndex `i -> 0 `i 462  ]
+"28
+[; ;main.c: 28:         {
+{
+"29
+[; ;main.c: 29:             blockingWait(2);
+[e ( _blockingWait (1 -> -> 2 `i `us ]
+"30
+[; ;main.c: 30:             rxData = GetResponse();
+[e = _rxData ( _GetResponse ..  ]
+"33
+[; ;main.c: 33:             strcpy(Storage, rxData);
+[e ( _strcpy (2 , &U _Storage -> _rxData `*Cuc ]
+"35
+[; ;main.c: 35:             char *s;
+[v _s `*uc ~T0 @X0 1 a ]
+"36
+[; ;main.c: 36:             s = strstr(Storage,"LEVEL");
+[e = _s ( _strstr (2 , -> &U _Storage `*Cuc :s 1C ]
+"37
+[; ;main.c: 37:             strcpy(Storage2, s);
+[e ( _strcpy (2 , &U _Storage2 -> _s `*Cuc ]
+"38
+[; ;main.c: 38:             SML_SendString(Storage2,64);
+[e ( _SML_SendString (2 , -> &U _Storage2 `*Cuc -> 64 `i ]
+"39
+[; ;main.c: 39:             ReadyReceiveBuffer();
+[e ( _ReadyReceiveBuffer ..  ]
+"40
+[; ;main.c: 40:         }
 }
 [e :U 462 ]
-"21
-[; ;main.c: 21:     }
+"41
+[; ;main.c: 41:     }
 }
 [e :U 459 ]
 [e $U 460  ]
 [e :U 461 ]
-"22
-[; ;main.c: 22: }
+"42
+[; ;main.c: 42: }
 [e :UE 458 ]
 }
+[a 1C 76 69 86 69 76 0 ]

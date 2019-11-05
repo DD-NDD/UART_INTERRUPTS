@@ -4794,12 +4794,13 @@ typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); _Bool (*T
 
 extern const uart_functions_t uart[];
 
-char ResponseBuffer [32] = {0};
-char ReadStorage [32] = {0};
+char ResponseBuffer [64] = {0};
+char ReadStorage [64] = {0};
 void blockingWait(uint16_t);
 void ReadyReceiveBuffer(void);
 char* GetResponse(void);
 void SendString(const char*);
+void SML_SendString(const char*,int len);
 void INIT_SMART_LIGHT (void);
 void ReceivedMessage(void);
 # 2 "main.c" 2
@@ -4861,21 +4862,41 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 3 "main.c" 2
 
+
+
+
+
+
+
+char RESET[6] = {0xFE,0x01,0x41,0x00,0x00,0x40};
+char KEY5[7] = {0xFE,0x02,0x27,0x07,0x10,0x01,0x33};
+char KEY3[7] = {0xFE,0x02,0x27,0x07,0x04,0x01,0x27};
+char LVL[5] = {0x4C, 0x45,0x56,0x45,0x4C};
 char* rxData;
-char* lastRxData;
+char Storage [64] = {0};
+char Storage2 [64] = {0};
 void main(void)
 {
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
     INIT_SMART_LIGHT ();
+    ReadyReceiveBuffer();
+    int test = 0;
     while (1)
     {
         if(ResponseIndex != 0)
         {
             blockingWait(2);
             rxData = GetResponse();
-            SendString(rxData);
+
+
+            strcpy(Storage, rxData);
+
+            char *s;
+            s = strstr(Storage,"LEVEL");
+            strcpy(Storage2, s);
+            SML_SendString(Storage2,64);
             ReadyReceiveBuffer();
         }
     }
